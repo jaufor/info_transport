@@ -1,0 +1,4814 @@
+@prefix : <http://example.com/gtfs#> .
+@prefix ex: <http://example.com/gtfs#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.com/gtfs#> .
+
+<http://example.com/gtfs#> rdf:type owl:Ontology ;
+                            rdfs:comment "An ontology for the geographic information associated to the public transport"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.com/gtfs#has_mode
+ex:has_mode rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain ex:Route ;
+            rdfs:range ex:Mode .
+
+
+###  http://example.com/gtfs#has_route
+ex:has_route rdf:type owl:ObjectProperty ;
+             rdfs:domain ex:Stop ;
+             rdfs:range ex:Route .
+
+
+###  http://example.com/gtfs#has_transfer_from
+ex:has_transfer_from rdf:type owl:ObjectProperty ;
+                     rdfs:domain ex:Transfer ;
+                     rdfs:range ex:Stop .
+
+
+###  http://example.com/gtfs#has_transfer_to
+ex:has_transfer_to rdf:type owl:ObjectProperty ;
+                   rdfs:domain ex:Transfer ;
+                   rdfs:range ex:Stop .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.com/gtfs#has_latitude
+ex:has_latitude rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain ex:Stop ;
+                rdfs:range xsd:decimal .
+
+
+###  http://example.com/gtfs#has_longitude
+ex:has_longitude rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain ex:Stop ;
+                 rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.com/gtfs#Mode
+ex:Mode rdf:type owl:Class .
+
+
+###  http://example.com/gtfs#Route
+ex:Route rdf:type owl:Class .
+
+
+###  http://example.com/gtfs#Stop
+ex:Stop rdf:type owl:Class .
+
+
+###  http://example.com/gtfs#Transfer
+ex:Transfer rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.com/gtfs#mode_1
+ex:mode_1 rdf:type owl:NamedIndividual ,
+                   ex:Mode ;
+          rdfs:label "Subway"@en .
+
+
+###  http://example.com/gtfs#par_4_1
+ex:par_4_1 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.4669 ;
+           ex:has_longitude -3.68917 ;
+           rdfs:label "PLAZA DE CASTILLA" .
+
+
+###  http://example.com/gtfs#par_4_10
+ex:par_4_10 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.42619 ;
+            ex:has_longitude -3.7011 ;
+            rdfs:label "TRIBUNAL" .
+
+
+###  http://example.com/gtfs#par_4_100
+ex:par_4_100 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.38563 ;
+             ex:has_longitude -3.7608 ;
+             rdfs:label "ALUCHE" .
+
+
+###  http://example.com/gtfs#par_4_101
+ex:par_4_101 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.39057 ;
+             ex:has_longitude -3.76535 ;
+             rdfs:label "EMPALME" .
+
+
+###  http://example.com/gtfs#par_4_102
+ex:par_4_102 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.39481 ;
+             ex:has_longitude -3.76813 ;
+             rdfs:label "CAMPAMENTO" .
+
+
+###  http://example.com/gtfs#par_4_103
+ex:par_4_103 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.40324 ;
+             ex:has_longitude -3.76101 ;
+             rdfs:label "CASA DE CAMPO" .
+
+
+###  http://example.com/gtfs#par_4_103_to_par_4_201
+ex:par_4_103_to_par_4_201 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_103 ;
+                          ex:has_transfer_to ex:par_4_201 .
+
+
+###  http://example.com/gtfs#par_4_104
+ex:par_4_104 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.39923 ;
+             ex:has_longitude -3.74429 ;
+             rdfs:label "LAGUNA" .
+
+
+###  http://example.com/gtfs#par_4_105
+ex:par_4_105 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.3927 ;
+             ex:has_longitude -3.74099 ;
+             rdfs:label "CARPETANA" .
+
+
+###  http://example.com/gtfs#par_4_105_to_par_4_97
+ex:par_4_105_to_par_4_97 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_105 ;
+                         ex:has_transfer_to ex:par_4_97 .
+
+
+###  http://example.com/gtfs#par_4_106
+ex:par_4_106 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.38847 ;
+             ex:has_longitude -3.73126 ;
+             rdfs:label "OPORTO" .
+
+
+###  http://example.com/gtfs#par_4_106_to_par_4_96
+ex:par_4_106_to_par_4_96 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_106 ;
+                         ex:has_transfer_to ex:par_4_96 .
+
+
+###  http://example.com/gtfs#par_4_107
+ex:par_4_107 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.3869 ;
+             ex:has_longitude -3.72313 ;
+             rdfs:label "OPAÑEL" .
+
+
+###  http://example.com/gtfs#par_4_107_to_par_4_206
+ex:par_4_107_to_par_4_206 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_107 ;
+                          ex:has_transfer_to ex:par_4_206 .
+
+
+###  http://example.com/gtfs#par_4_108
+ex:par_4_108 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.3846 ;
+             ex:has_longitude -3.71837 ;
+             rdfs:label "PLAZA ELIPTICA" .
+
+
+###  http://example.com/gtfs#par_4_108_to_par_4_206
+ex:par_4_108_to_par_4_206 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_108 ;
+                          ex:has_transfer_to ex:par_4_206 .
+
+
+###  http://example.com/gtfs#par_4_109
+ex:par_4_109 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.3871 ;
+             ex:has_longitude -3.7069 ;
+             rdfs:label "USERA" .
+
+
+###  http://example.com/gtfs#par_4_10_to_par_4_195
+ex:par_4_10_to_par_4_195 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_10 ;
+                         ex:has_transfer_to ex:par_4_195 .
+
+
+###  http://example.com/gtfs#par_4_10_to_par_4_196
+ex:par_4_10_to_par_4_196 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_10 ;
+                         ex:has_transfer_to ex:par_4_196 .
+
+
+###  http://example.com/gtfs#par_4_10_to_par_4_56
+ex:par_4_10_to_par_4_56 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_10 ;
+                        ex:has_transfer_to ex:par_4_56 .
+
+
+###  http://example.com/gtfs#par_4_10_to_par_4_57
+ex:par_4_10_to_par_4_57 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_10 ;
+                        ex:has_transfer_to ex:par_4_57 .
+
+
+###  http://example.com/gtfs#par_4_10_to_par_4_86
+ex:par_4_10_to_par_4_86 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_10 ;
+                        ex:has_transfer_to ex:par_4_86 .
+
+
+###  http://example.com/gtfs#par_4_11
+ex:par_4_11 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.42001 ;
+            ex:has_longitude -3.7018 ;
+            rdfs:label "GRAN VIA" .
+
+
+###  http://example.com/gtfs#par_4_110
+ex:par_4_110 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.39116 ;
+             ex:has_longitude -3.69505 ;
+             rdfs:label "LEGAZPI" .
+
+
+###  http://example.com/gtfs#par_4_110_to_par_4_43
+ex:par_4_110_to_par_4_43 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_110 ;
+                         ex:has_transfer_to ex:par_4_43 .
+
+
+###  http://example.com/gtfs#par_4_111
+ex:par_4_111 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.39538 ;
+             ex:has_longitude -3.67814 ;
+             rdfs:label "MENDEZ ALVARO" .
+
+
+###  http://example.com/gtfs#par_4_112
+ex:par_4_112 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.40207 ;
+             ex:has_longitude -3.67386 ;
+             rdfs:label "PACIFICO" .
+
+
+###  http://example.com/gtfs#par_4_112_to_par_4_18
+ex:par_4_112_to_par_4_18 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_112 ;
+                         ex:has_transfer_to ex:par_4_18 .
+
+
+###  http://example.com/gtfs#par_4_113
+ex:par_4_113 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.40697 ;
+             ex:has_longitude -3.67041 ;
+             rdfs:label "CONDE DE CASAL" .
+
+
+###  http://example.com/gtfs#par_4_114
+ex:par_4_114 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.41507 ;
+             ex:has_longitude -3.66951 ;
+             rdfs:label "SAINZ DE BARANDA" .
+
+
+###  http://example.com/gtfs#par_4_114_to_par_4_174
+ex:par_4_114_to_par_4_174 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_114 ;
+                          ex:has_transfer_to ex:par_4_174 .
+
+
+###  http://example.com/gtfs#par_4_115
+ex:par_4_115 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.42289 ;
+             ex:has_longitude -3.6686 ;
+             rdfs:label "ODONNELL" .
+
+
+###  http://example.com/gtfs#par_4_116
+ex:par_4_116 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.4279 ;
+             ex:has_longitude -3.66921 ;
+             rdfs:label "MANUEL BECERRA" .
+
+
+###  http://example.com/gtfs#par_4_116_to_par_4_29
+ex:par_4_116_to_par_4_29 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_116 ;
+                         ex:has_transfer_to ex:par_4_29 .
+
+
+###  http://example.com/gtfs#par_4_117
+ex:par_4_117 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.43295 ;
+             ex:has_longitude -3.67294 ;
+             rdfs:label "DIEGO DE LEON" .
+
+
+###  http://example.com/gtfs#par_4_117_to_par_4_62
+ex:par_4_117_to_par_4_62 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_117 ;
+                         ex:has_transfer_to ex:par_4_62 .
+
+
+###  http://example.com/gtfs#par_4_117_to_par_4_63
+ex:par_4_117_to_par_4_63 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_117 ;
+                         ex:has_transfer_to ex:par_4_63 .
+
+
+###  http://example.com/gtfs#par_4_117_to_par_4_82
+ex:par_4_117_to_par_4_82 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_117 ;
+                         ex:has_transfer_to ex:par_4_82 .
+
+
+###  http://example.com/gtfs#par_4_118
+ex:par_4_118 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.43804 ;
+             ex:has_longitude -3.67658 ;
+             rdfs:label "AVENIDA DE AMERICA" .
+
+
+###  http://example.com/gtfs#par_4_118_to_par_4_140
+ex:par_4_118_to_par_4_140 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_118 ;
+                          ex:has_transfer_to ex:par_4_140 .
+
+
+###  http://example.com/gtfs#par_4_118_to_par_4_141
+ex:par_4_118_to_par_4_141 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_118 ;
+                          ex:has_transfer_to ex:par_4_141 .
+
+
+###  http://example.com/gtfs#par_4_118_to_par_4_170
+ex:par_4_118_to_par_4_170 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_118 ;
+                          ex:has_transfer_to ex:par_4_170 .
+
+
+###  http://example.com/gtfs#par_4_118_to_par_4_63
+ex:par_4_118_to_par_4_63 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_118 ;
+                         ex:has_transfer_to ex:par_4_63 .
+
+
+###  http://example.com/gtfs#par_4_118_to_par_4_64
+ex:par_4_118_to_par_4_64 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_118 ;
+                         ex:has_transfer_to ex:par_4_64 .
+
+
+###  http://example.com/gtfs#par_4_119
+ex:par_4_119 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44379 ;
+             ex:has_longitude -3.68406 ;
+             rdfs:label "REPUBLICA ARGENTINA" .
+
+
+###  http://example.com/gtfs#par_4_119_to_par_4_169
+ex:par_4_119_to_par_4_169 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_119 ;
+                          ex:has_transfer_to ex:par_4_169 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_34
+ex:par_4_11_to_par_4_34 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_34 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_35
+ex:par_4_11_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_48
+ex:par_4_11_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_49
+ex:par_4_11_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_86
+ex:par_4_11_to_par_4_86 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_86 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_87
+ex:par_4_11_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_11_to_par_4_88
+ex:par_4_11_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_11 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_12
+ex:par_4_12 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.41688 ;
+            ex:has_longitude -3.70326 ;
+            rdfs:label "SOL" .
+
+
+###  http://example.com/gtfs#par_4_120
+ex:par_4_120 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44662 ;
+             ex:has_longitude -3.69241 ;
+             rdfs:label "NUEVOS MINISTERIOS" .
+
+
+###  http://example.com/gtfs#par_4_120_to_par_4_155
+ex:par_4_120_to_par_4_155 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_120 ;
+                          ex:has_transfer_to ex:par_4_155 .
+
+
+###  http://example.com/gtfs#par_4_120_to_par_4_193
+ex:par_4_120_to_par_4_193 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_120 ;
+                          ex:has_transfer_to ex:par_4_193 .
+
+
+###  http://example.com/gtfs#par_4_121
+ex:par_4_121 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44697 ;
+             ex:has_longitude -3.70387 ;
+             rdfs:label "CUATRO CAMINOS" .
+
+
+###  http://example.com/gtfs#par_4_121_to_par_4_42
+ex:par_4_121_to_par_4_42 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_121 ;
+                         ex:has_transfer_to ex:par_4_42 .
+
+
+###  http://example.com/gtfs#par_4_121_to_par_4_5
+ex:par_4_121_to_par_4_5 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_121 ;
+                        ex:has_transfer_to ex:par_4_5 .
+
+
+###  http://example.com/gtfs#par_4_121_to_par_4_6
+ex:par_4_121_to_par_4_6 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_121 ;
+                        ex:has_transfer_to ex:par_4_6 .
+
+
+###  http://example.com/gtfs#par_4_122
+ex:par_4_122 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44637 ;
+             ex:has_longitude -3.71229 ;
+             rdfs:label "GUZMAN EL BUENO" .
+
+
+###  http://example.com/gtfs#par_4_122_to_par_4_146
+ex:par_4_122_to_par_4_146 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_122 ;
+                          ex:has_transfer_to ex:par_4_146 .
+
+
+###  http://example.com/gtfs#par_4_123
+ex:par_4_123 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44644 ;
+             ex:has_longitude -3.71943 ;
+             rdfs:label "VICENTE ALEIXANDRE" .
+
+
+###  http://example.com/gtfs#par_4_124
+ex:par_4_124 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.44356 ;
+             ex:has_longitude -3.72678 ;
+             rdfs:label "CIUDAD UNIVERSITARIA" .
+
+
+###  http://example.com/gtfs#par_4_125
+ex:par_4_125 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.43497 ;
+             ex:has_longitude -3.71945 ;
+             rdfs:label "MONCLOA" .
+
+
+###  http://example.com/gtfs#par_4_125_to_par_4_53
+ex:par_4_125_to_par_4_53 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_125 ;
+                         ex:has_transfer_to ex:par_4_53 .
+
+
+###  http://example.com/gtfs#par_4_126
+ex:par_4_126 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.43053 ;
+             ex:has_longitude -3.71596 ;
+             rdfs:label "ARGÜELLES" .
+
+
+###  http://example.com/gtfs#par_4_126_to_par_4_51
+ex:par_4_126_to_par_4_51 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_126 ;
+                         ex:has_transfer_to ex:par_4_51 .
+
+
+###  http://example.com/gtfs#par_4_126_to_par_4_52
+ex:par_4_126_to_par_4_52 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_126 ;
+                         ex:has_transfer_to ex:par_4_52 .
+
+
+###  http://example.com/gtfs#par_4_126_to_par_4_54
+ex:par_4_126_to_par_4_54 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_126 ;
+                         ex:has_transfer_to ex:par_4_54 .
+
+
+###  http://example.com/gtfs#par_4_127
+ex:par_4_127 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.42107 ;
+             ex:has_longitude -3.72032 ;
+             rdfs:label "PRINCIPE PIO" .
+
+
+###  http://example.com/gtfs#par_4_127_to_par_4_198
+ex:par_4_127_to_par_4_198 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_127 ;
+                          ex:has_transfer_to ex:par_4_198 .
+
+
+###  http://example.com/gtfs#par_4_127_to_par_4_238
+ex:par_4_127_to_par_4_238 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_127 ;
+                          ex:has_transfer_to ex:par_4_238 .
+
+
+###  http://example.com/gtfs#par_4_128
+ex:par_4_128 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.4139 ;
+             ex:has_longitude -3.72724 ;
+             rdfs:label "PUERTA DEL ANGEL" .
+
+
+###  http://example.com/gtfs#par_4_129
+ex:par_4_129 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.40993 ;
+             ex:has_longitude -3.73894 ;
+             rdfs:label "ALTO DE EXTREMADURA" .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_34
+ex:par_4_12_to_par_4_34 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_34 .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_35
+ex:par_4_12_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_48
+ex:par_4_12_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_49
+ex:par_4_12_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_87
+ex:par_4_12_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_12_to_par_4_88
+ex:par_4_12_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_12 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_13
+ex:par_4_13 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.41235 ;
+            ex:has_longitude -3.70466 ;
+            rdfs:label "TIRSO DE MOLINA" .
+
+
+###  http://example.com/gtfs#par_4_130
+ex:par_4_130 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.4051 ;
+             ex:has_longitude -3.74534 ;
+             rdfs:label "LUCERO" .
+
+
+###  http://example.com/gtfs#par_4_132
+ex:par_4_132 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43299 ;
+             ex:has_longitude -3.60788 ;
+             rdfs:label "LAS MUSAS" .
+
+
+###  http://example.com/gtfs#par_4_133
+ex:par_4_133 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42799 ;
+             ex:has_longitude -3.61547 ;
+             rdfs:label "SAN BLAS" .
+
+
+###  http://example.com/gtfs#par_4_134
+ex:par_4_134 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42799 ;
+             ex:has_longitude -3.62572 ;
+             rdfs:label "SIMANCAS" .
+
+
+###  http://example.com/gtfs#par_4_135
+ex:par_4_135 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42842 ;
+             ex:has_longitude -3.6333 ;
+             rdfs:label "GARCIA NOBLEJAS" .
+
+
+###  http://example.com/gtfs#par_4_136
+ex:par_4_136 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43021 ;
+             ex:has_longitude -3.64106 ;
+             rdfs:label "ASCAO" .
+
+
+###  http://example.com/gtfs#par_4_137
+ex:par_4_137 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43566 ;
+             ex:has_longitude -3.64282 ;
+             rdfs:label "PUEBLO NUEVO" .
+
+
+###  http://example.com/gtfs#par_4_137_to_par_4_77
+ex:par_4_137_to_par_4_77 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_137 ;
+                         ex:has_transfer_to ex:par_4_77 .
+
+
+###  http://example.com/gtfs#par_4_137_to_par_4_78
+ex:par_4_137_to_par_4_78 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_137 ;
+                         ex:has_transfer_to ex:par_4_78 .
+
+
+###  http://example.com/gtfs#par_4_137_to_par_4_79
+ex:par_4_137_to_par_4_79 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_137 ;
+                         ex:has_transfer_to ex:par_4_79 .
+
+
+###  http://example.com/gtfs#par_4_138
+ex:par_4_138 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.4391 ;
+             ex:has_longitude -3.652 ;
+             rdfs:label "BARRIO DE LA CONCEPCION" .
+
+
+###  http://example.com/gtfs#par_4_139
+ex:par_4_139 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43945 ;
+             ex:has_longitude -3.66297 ;
+             rdfs:label "PARQUE DE LAS AVENIDAS" .
+
+
+###  http://example.com/gtfs#par_4_13_to_par_4_90
+ex:par_4_13_to_par_4_90 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_13 ;
+                        ex:has_transfer_to ex:par_4_90 .
+
+
+###  http://example.com/gtfs#par_4_14
+ex:par_4_14 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.41246 ;
+            ex:has_longitude -3.69937 ;
+            rdfs:label "ANTON MARTIN" .
+
+
+###  http://example.com/gtfs#par_4_140
+ex:par_4_140 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43934 ;
+             ex:has_longitude -3.67215 ;
+             rdfs:label "CARTAGENA" .
+
+
+###  http://example.com/gtfs#par_4_140_to_par_4_118
+ex:par_4_140_to_par_4_118 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_140 ;
+                          ex:has_transfer_to ex:par_4_118 .
+
+
+###  http://example.com/gtfs#par_4_140_to_par_4_170
+ex:par_4_140_to_par_4_170 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_140 ;
+                          ex:has_transfer_to ex:par_4_170 .
+
+
+###  http://example.com/gtfs#par_4_140_to_par_4_64
+ex:par_4_140_to_par_4_64 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_140 ;
+                         ex:has_transfer_to ex:par_4_64 .
+
+
+###  http://example.com/gtfs#par_4_141
+ex:par_4_141 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43804 ;
+             ex:has_longitude -3.67653 ;
+             rdfs:label "AVENIDA DE AMERICA" .
+
+
+###  http://example.com/gtfs#par_4_141_to_par_4_118
+ex:par_4_141_to_par_4_118 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_141 ;
+                          ex:has_transfer_to ex:par_4_118 .
+
+
+###  http://example.com/gtfs#par_4_141_to_par_4_170
+ex:par_4_141_to_par_4_170 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_141 ;
+                          ex:has_transfer_to ex:par_4_170 .
+
+
+###  http://example.com/gtfs#par_4_141_to_par_4_63
+ex:par_4_141_to_par_4_63 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_141 ;
+                         ex:has_transfer_to ex:par_4_63 .
+
+
+###  http://example.com/gtfs#par_4_141_to_par_4_64
+ex:par_4_141_to_par_4_64 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_141 ;
+                         ex:has_transfer_to ex:par_4_64 .
+
+
+###  http://example.com/gtfs#par_4_142
+ex:par_4_142 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43825 ;
+             ex:has_longitude -3.69148 ;
+             rdfs:label "GREGORIO MARAÑON" .
+
+
+###  http://example.com/gtfs#par_4_142_to_par_4_194
+ex:par_4_142_to_par_4_194 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_142 ;
+                          ex:has_transfer_to ex:par_4_194 .
+
+
+###  http://example.com/gtfs#par_4_143
+ex:par_4_143 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43838 ;
+             ex:has_longitude -3.69925 ;
+             rdfs:label "ALONSO CANO" .
+
+
+###  http://example.com/gtfs#par_4_143_to_par_4_41
+ex:par_4_143_to_par_4_41 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_143 ;
+                         ex:has_transfer_to ex:par_4_41 .
+
+
+###  http://example.com/gtfs#par_4_143_to_par_4_7
+ex:par_4_143_to_par_4_7 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_143 ;
+                        ex:has_transfer_to ex:par_4_7 .
+
+
+###  http://example.com/gtfs#par_4_143_to_par_4_8
+ex:par_4_143_to_par_4_8 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_143 ;
+                        ex:has_transfer_to ex:par_4_8 .
+
+
+###  http://example.com/gtfs#par_4_144
+ex:par_4_144 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.4387 ;
+             ex:has_longitude -3.70489 ;
+             rdfs:label "CANAL" .
+
+
+###  http://example.com/gtfs#par_4_144_to_par_4_41
+ex:par_4_144_to_par_4_41 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_144 ;
+                         ex:has_transfer_to ex:par_4_41 .
+
+
+###  http://example.com/gtfs#par_4_144_to_par_4_7
+ex:par_4_144_to_par_4_7 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_144 ;
+                        ex:has_transfer_to ex:par_4_7 .
+
+
+###  http://example.com/gtfs#par_4_145
+ex:par_4_145 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43907 ;
+             ex:has_longitude -3.71373 ;
+             rdfs:label "ISLAS FILIPINAS" .
+
+
+###  http://example.com/gtfs#par_4_146
+ex:par_4_146 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.44633 ;
+             ex:has_longitude -3.71229 ;
+             rdfs:label "GUZMAN EL BUENO" .
+
+
+###  http://example.com/gtfs#par_4_146_to_par_4_122
+ex:par_4_146_to_par_4_122 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_146 ;
+                          ex:has_transfer_to ex:par_4_122 .
+
+
+###  http://example.com/gtfs#par_4_147
+ex:par_4_147 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.45648 ;
+             ex:has_longitude -3.71239 ;
+             rdfs:label "FRANCOS RODRIGUEZ" .
+
+
+###  http://example.com/gtfs#par_4_148
+ex:par_4_148 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.46482 ;
+             ex:has_longitude -3.71597 ;
+             rdfs:label "VALDEZARZA" .
+
+
+###  http://example.com/gtfs#par_4_149
+ex:par_4_149 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.47022 ;
+             ex:has_longitude -3.71769 ;
+             rdfs:label "ANTONIO MACHADO" .
+
+
+###  http://example.com/gtfs#par_4_14_to_par_4_47
+ex:par_4_14_to_par_4_47 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_14 ;
+                        ex:has_transfer_to ex:par_4_47 .
+
+
+###  http://example.com/gtfs#par_4_15
+ex:par_4_15 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.40885 ;
+            ex:has_longitude -3.69249 ;
+            rdfs:label "ESTACION DEL ARTE" .
+
+
+###  http://example.com/gtfs#par_4_150
+ex:par_4_150 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.47592 ;
+             ex:has_longitude -3.71582 ;
+             rdfs:label "PEÑAGRANDE" .
+
+
+###  http://example.com/gtfs#par_4_151
+ex:par_4_151 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.4801 ;
+             ex:has_longitude -3.7184 ;
+             rdfs:label "AVENIDA DE LA ILUSTRACION" .
+
+
+###  http://example.com/gtfs#par_4_152
+ex:par_4_152 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.48502 ;
+             ex:has_longitude -3.72305 ;
+             rdfs:label "LACOMA" .
+
+
+###  http://example.com/gtfs#par_4_153
+ex:par_4_153 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.4909 ;
+             ex:has_longitude -3.72604 ;
+             rdfs:label "ARROYOFRESNO" .
+
+
+###  http://example.com/gtfs#par_4_154
+ex:par_4_154 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.49511 ;
+             ex:has_longitude -3.72589 ;
+             rdfs:label "PITIS" .
+
+
+###  http://example.com/gtfs#par_4_155
+ex:par_4_155 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.44655 ;
+             ex:has_longitude -3.69241 ;
+             rdfs:label "NUEVOS MINISTERIOS" .
+
+
+###  http://example.com/gtfs#par_4_155_to_par_4_120
+ex:par_4_155_to_par_4_120 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_155 ;
+                          ex:has_transfer_to ex:par_4_120 .
+
+
+###  http://example.com/gtfs#par_4_155_to_par_4_193
+ex:par_4_155_to_par_4_193 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_155 ;
+                          ex:has_transfer_to ex:par_4_193 .
+
+
+###  http://example.com/gtfs#par_4_156
+ex:par_4_156 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.45634 ;
+             ex:has_longitude -3.67682 ;
+             rdfs:label "COLOMBIA" .
+
+
+###  http://example.com/gtfs#par_4_156_to_par_4_167
+ex:par_4_156_to_par_4_167 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_156 ;
+                          ex:has_transfer_to ex:par_4_167 .
+
+
+###  http://example.com/gtfs#par_4_157
+ex:par_4_157 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.46938 ;
+             ex:has_longitude -3.63832 ;
+             rdfs:label "MAR DE CRISTAL" .
+
+
+###  http://example.com/gtfs#par_4_157_to_par_4_71
+ex:par_4_157_to_par_4_71 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_157 ;
+                         ex:has_transfer_to ex:par_4_71 .
+
+
+###  http://example.com/gtfs#par_4_158
+ex:par_4_158 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.46389 ;
+             ex:has_longitude -3.6162 ;
+             rdfs:label "FERIA DE MADRID" .
+
+
+###  http://example.com/gtfs#par_4_159
+ex:par_4_159 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.46864 ;
+             ex:has_longitude -3.56954 ;
+             rdfs:label "AEROPUERTO T1-T2-T3" .
+
+
+###  http://example.com/gtfs#par_4_16
+ex:par_4_16 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.40659 ;
+            ex:has_longitude -3.68938 ;
+            rdfs:label "ATOCHA" .
+
+
+###  http://example.com/gtfs#par_4_160
+ex:par_4_160 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.47577 ;
+             ex:has_longitude -3.58253 ;
+             rdfs:label "BARAJAS" .
+
+
+###  http://example.com/gtfs#par_4_161
+ex:par_4_161 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.48466 ;
+             ex:has_longitude -3.70751 ;
+             rdfs:label "HERRERA ORIA" .
+
+
+###  http://example.com/gtfs#par_4_162
+ex:par_4_162 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.47689 ;
+             ex:has_longitude -3.70316 ;
+             rdfs:label "BARRIO DEL PILAR" .
+
+
+###  http://example.com/gtfs#par_4_163
+ex:par_4_163 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.46944 ;
+             ex:has_longitude -3.69588 ;
+             rdfs:label "VENTILLA" .
+
+
+###  http://example.com/gtfs#par_4_164
+ex:par_4_164 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.4669 ;
+             ex:has_longitude -3.68913 ;
+             rdfs:label "PLAZA DE CASTILLA" .
+
+
+###  http://example.com/gtfs#par_4_164_to_par_4_1
+ex:par_4_164_to_par_4_1 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_164 ;
+                        ex:has_transfer_to ex:par_4_1 .
+
+
+###  http://example.com/gtfs#par_4_164_to_par_4_190
+ex:par_4_164_to_par_4_190 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_164 ;
+                          ex:has_transfer_to ex:par_4_190 .
+
+
+###  http://example.com/gtfs#par_4_165
+ex:par_4_165 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.46763 ;
+             ex:has_longitude -3.67917 ;
+             rdfs:label "DUQUE DE PASTRANA" .
+
+
+###  http://example.com/gtfs#par_4_166
+ex:par_4_166 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.463 ;
+             ex:has_longitude -3.67579 ;
+             rdfs:label "PIO XII" .
+
+
+###  http://example.com/gtfs#par_4_167
+ex:par_4_167 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.45749 ;
+             ex:has_longitude -3.67694 ;
+             rdfs:label "COLOMBIA" .
+
+
+###  http://example.com/gtfs#par_4_167_to_par_4_156
+ex:par_4_167_to_par_4_156 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_167 ;
+                          ex:has_transfer_to ex:par_4_156 .
+
+
+###  http://example.com/gtfs#par_4_168
+ex:par_4_168 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.45145 ;
+             ex:has_longitude -3.67738 ;
+             rdfs:label "CONCHA ESPINA" .
+
+
+###  http://example.com/gtfs#par_4_169
+ex:par_4_169 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.44427 ;
+             ex:has_longitude -3.67821 ;
+             rdfs:label "CRUZ DEL RAYO" .
+
+
+###  http://example.com/gtfs#par_4_169_to_par_4_119
+ex:par_4_169_to_par_4_119 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_169 ;
+                          ex:has_transfer_to ex:par_4_119 .
+
+
+###  http://example.com/gtfs#par_4_169_to_par_4_65
+ex:par_4_169_to_par_4_65 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_169 ;
+                         ex:has_transfer_to ex:par_4_65 .
+
+
+###  http://example.com/gtfs#par_4_17
+ex:par_4_17 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.40445 ;
+            ex:has_longitude -3.68098 ;
+            rdfs:label "MENENDEZ PELAYO" .
+
+
+###  http://example.com/gtfs#par_4_170
+ex:par_4_170 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.43804 ;
+             ex:has_longitude -3.67647 ;
+             rdfs:label "AVENIDA DE AMERICA" .
+
+
+###  http://example.com/gtfs#par_4_170_to_par_4_118
+ex:par_4_170_to_par_4_118 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_170 ;
+                          ex:has_transfer_to ex:par_4_118 .
+
+
+###  http://example.com/gtfs#par_4_170_to_par_4_140
+ex:par_4_170_to_par_4_140 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_170 ;
+                          ex:has_transfer_to ex:par_4_140 .
+
+
+###  http://example.com/gtfs#par_4_170_to_par_4_141
+ex:par_4_170_to_par_4_141 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_170 ;
+                          ex:has_transfer_to ex:par_4_141 .
+
+
+###  http://example.com/gtfs#par_4_170_to_par_4_63
+ex:par_4_170_to_par_4_63 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_170 ;
+                         ex:has_transfer_to ex:par_4_63 .
+
+
+###  http://example.com/gtfs#par_4_170_to_par_4_64
+ex:par_4_170_to_par_4_64 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_170 ;
+                         ex:has_transfer_to ex:par_4_64 .
+
+
+###  http://example.com/gtfs#par_4_171
+ex:par_4_171 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.43013 ;
+             ex:has_longitude -3.67936 ;
+             rdfs:label "NUÑEZ DE BALBOA" .
+
+
+###  http://example.com/gtfs#par_4_171_to_par_4_62
+ex:par_4_171_to_par_4_62 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_171 ;
+                         ex:has_transfer_to ex:par_4_62 .
+
+
+###  http://example.com/gtfs#par_4_171_to_par_4_82
+ex:par_4_171_to_par_4_82 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_171 ;
+                         ex:has_transfer_to ex:par_4_82 .
+
+
+###  http://example.com/gtfs#par_4_171_to_par_4_83
+ex:par_4_171_to_par_4_83 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_171 ;
+                         ex:has_transfer_to ex:par_4_83 .
+
+
+###  http://example.com/gtfs#par_4_172
+ex:par_4_172 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.42418 ;
+             ex:has_longitude -3.68024 ;
+             rdfs:label "PRINCIPE DE VERGARA" .
+
+
+###  http://example.com/gtfs#par_4_172_to_par_4_30
+ex:par_4_172_to_par_4_30 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_172 ;
+                         ex:has_transfer_to ex:par_4_30 .
+
+
+###  http://example.com/gtfs#par_4_172_to_par_4_31
+ex:par_4_172_to_par_4_31 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_172 ;
+                         ex:has_transfer_to ex:par_4_31 .
+
+
+###  http://example.com/gtfs#par_4_172_to_par_4_60
+ex:par_4_172_to_par_4_60 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_172 ;
+                         ex:has_transfer_to ex:par_4_60 .
+
+
+###  http://example.com/gtfs#par_4_172_to_par_4_61
+ex:par_4_172_to_par_4_61 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_172 ;
+                         ex:has_transfer_to ex:par_4_61 .
+
+
+###  http://example.com/gtfs#par_4_173
+ex:par_4_173 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.41839 ;
+             ex:has_longitude -3.67858 ;
+             rdfs:label "IBIZA" .
+
+
+###  http://example.com/gtfs#par_4_174
+ex:par_4_174 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.41503 ;
+             ex:has_longitude -3.66951 ;
+             rdfs:label "SAINZ DE BARANDA" .
+
+
+###  http://example.com/gtfs#par_4_174_to_par_4_114
+ex:par_4_174_to_par_4_114 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_174 ;
+                          ex:has_transfer_to ex:par_4_114 .
+
+
+###  http://example.com/gtfs#par_4_175
+ex:par_4_175 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.41147 ;
+             ex:has_longitude -3.66179 ;
+             rdfs:label "ESTRELLA" .
+
+
+###  http://example.com/gtfs#par_4_176
+ex:par_4_176 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.41024 ;
+             ex:has_longitude -3.65273 ;
+             rdfs:label "VINATEROS" .
+
+
+###  http://example.com/gtfs#par_4_177
+ex:par_4_177 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40522 ;
+             ex:has_longitude -3.64181 ;
+             rdfs:label "ARTILLEROS" .
+
+
+###  http://example.com/gtfs#par_4_178
+ex:par_4_178 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40051 ;
+             ex:has_longitude -3.63512 ;
+             rdfs:label "PAVONES" .
+
+
+###  http://example.com/gtfs#par_4_179
+ex:par_4_179 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40005 ;
+             ex:has_longitude -3.62156 ;
+             rdfs:label "VALDEBERNARDO" .
+
+
+###  http://example.com/gtfs#par_4_18
+ex:par_4_18 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.40126 ;
+            ex:has_longitude -3.67514 ;
+            rdfs:label "PACIFICO" .
+
+
+###  http://example.com/gtfs#par_4_180
+ex:par_4_180 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40422 ;
+             ex:has_longitude -3.60886 ;
+             rdfs:label "VICALVARO" .
+
+
+###  http://example.com/gtfs#par_4_181
+ex:par_4_181 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40381 ;
+             ex:has_longitude -3.60239 ;
+             rdfs:label "SAN CIPRIANO" .
+
+
+###  http://example.com/gtfs#par_4_182
+ex:par_4_182 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.40132 ;
+             ex:has_longitude -3.59598 ;
+             rdfs:label "PUERTA DE ARGANDA" .
+
+
+###  http://example.com/gtfs#par_4_183
+ex:par_4_183 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.36677 ;
+             ex:has_longitude -3.54728 ;
+             rdfs:label "RIVAS URBANIZACIONES" .
+
+
+###  http://example.com/gtfs#par_4_184
+ex:par_4_184 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.32837 ;
+             ex:has_longitude -3.5206 ;
+             rdfs:label "RIVAS VACIAMADRID" .
+
+
+###  http://example.com/gtfs#par_4_185
+ex:par_4_185 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.31902 ;
+             ex:has_longitude -3.47745 ;
+             rdfs:label "LA POVEDA" .
+
+
+###  http://example.com/gtfs#par_4_186
+ex:par_4_186 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.30367 ;
+             ex:has_longitude -3.44752 ;
+             rdfs:label "ARGANDA DEL REY" .
+
+
+###  http://example.com/gtfs#par_4_187
+ex:par_4_187 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.49509 ;
+             ex:has_longitude -3.69283 ;
+             rdfs:label "FUENCARRAL" .
+
+
+###  http://example.com/gtfs#par_4_188
+ex:par_4_188 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.48041 ;
+             ex:has_longitude -3.68585 ;
+             rdfs:label "BEGOÑA" .
+
+
+###  http://example.com/gtfs#par_4_189
+ex:par_4_189 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.4721 ;
+             ex:has_longitude -3.68259 ;
+             rdfs:label "CHAMARTIN" .
+
+
+###  http://example.com/gtfs#par_4_189_to_par_4_261
+ex:par_4_189_to_par_4_261 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_189 ;
+                          ex:has_transfer_to ex:par_4_261 .
+
+
+###  http://example.com/gtfs#par_4_18_to_par_4_112
+ex:par_4_18_to_par_4_112 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_18 ;
+                         ex:has_transfer_to ex:par_4_112 .
+
+
+###  http://example.com/gtfs#par_4_19
+ex:par_4_19 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.39819 ;
+            ex:has_longitude -3.66906 ;
+            rdfs:label "PUENTE DE VALLECAS" .
+
+
+###  http://example.com/gtfs#par_4_190
+ex:par_4_190 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.4669 ;
+             ex:has_longitude -3.68909 ;
+             rdfs:label "PLAZA DE CASTILLA" .
+
+
+###  http://example.com/gtfs#par_4_190_to_par_4_1
+ex:par_4_190_to_par_4_1 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_190 ;
+                        ex:has_transfer_to ex:par_4_1 .
+
+
+###  http://example.com/gtfs#par_4_190_to_par_4_164
+ex:par_4_190_to_par_4_164 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_190 ;
+                          ex:has_transfer_to ex:par_4_164 .
+
+
+###  http://example.com/gtfs#par_4_191
+ex:par_4_191 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.45842 ;
+             ex:has_longitude -3.68985 ;
+             rdfs:label "CUZCO" .
+
+
+###  http://example.com/gtfs#par_4_192
+ex:par_4_192 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.45159 ;
+             ex:has_longitude -3.69038 ;
+             rdfs:label "SANTIAGO BERNABEU" .
+
+
+###  http://example.com/gtfs#par_4_193
+ex:par_4_193 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.44659 ;
+             ex:has_longitude -3.69241 ;
+             rdfs:label "NUEVOS MINISTERIOS" .
+
+
+###  http://example.com/gtfs#par_4_193_to_par_4_120
+ex:par_4_193_to_par_4_120 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_193 ;
+                          ex:has_transfer_to ex:par_4_120 .
+
+
+###  http://example.com/gtfs#par_4_193_to_par_4_155
+ex:par_4_193_to_par_4_155 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_193 ;
+                          ex:has_transfer_to ex:par_4_155 .
+
+
+###  http://example.com/gtfs#par_4_194
+ex:par_4_194 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.43753 ;
+             ex:has_longitude -3.69127 ;
+             rdfs:label "GREGORIO MARAÑON" .
+
+
+###  http://example.com/gtfs#par_4_194_to_par_4_142
+ex:par_4_194_to_par_4_142 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_194 ;
+                          ex:has_transfer_to ex:par_4_142 .
+
+
+###  http://example.com/gtfs#par_4_195
+ex:par_4_195 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.42853 ;
+             ex:has_longitude -3.69643 ;
+             rdfs:label "ALONSO MARTINEZ" .
+
+
+###  http://example.com/gtfs#par_4_195_to_par_4_10
+ex:par_4_195_to_par_4_10 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_195 ;
+                         ex:has_transfer_to ex:par_4_10 .
+
+
+###  http://example.com/gtfs#par_4_195_to_par_4_56
+ex:par_4_195_to_par_4_56 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_195 ;
+                         ex:has_transfer_to ex:par_4_56 .
+
+
+###  http://example.com/gtfs#par_4_195_to_par_4_57
+ex:par_4_195_to_par_4_57 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_195 ;
+                         ex:has_transfer_to ex:par_4_57 .
+
+
+###  http://example.com/gtfs#par_4_195_to_par_4_85
+ex:par_4_195_to_par_4_85 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_195 ;
+                         ex:has_transfer_to ex:par_4_85 .
+
+
+###  http://example.com/gtfs#par_4_195_to_par_4_9
+ex:par_4_195_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_195 ;
+                        ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_196
+ex:par_4_196 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.426 ;
+             ex:has_longitude -3.70208 ;
+             rdfs:label "TRIBUNAL" .
+
+
+###  http://example.com/gtfs#par_4_196_to_par_4_10
+ex:par_4_196_to_par_4_10 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_196 ;
+                         ex:has_transfer_to ex:par_4_10 .
+
+
+###  http://example.com/gtfs#par_4_196_to_par_4_38
+ex:par_4_196_to_par_4_38 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_196 ;
+                         ex:has_transfer_to ex:par_4_38 .
+
+
+###  http://example.com/gtfs#par_4_196_to_par_4_56
+ex:par_4_196_to_par_4_56 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_196 ;
+                         ex:has_transfer_to ex:par_4_56 .
+
+
+###  http://example.com/gtfs#par_4_196_to_par_4_9
+ex:par_4_196_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_196 ;
+                        ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_197
+ex:par_4_197 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.42409 ;
+             ex:has_longitude -3.7097 ;
+             rdfs:label "PLAZA DE ESPAÑA" .
+
+
+###  http://example.com/gtfs#par_4_197_to_par_4_37
+ex:par_4_197_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_197 ;
+                         ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_197_to_par_4_38
+ex:par_4_197_to_par_4_38 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_197 ;
+                         ex:has_transfer_to ex:par_4_38 .
+
+
+###  http://example.com/gtfs#par_4_197_to_par_4_50
+ex:par_4_197_to_par_4_50 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_197 ;
+                         ex:has_transfer_to ex:par_4_50 .
+
+
+###  http://example.com/gtfs#par_4_197_to_par_4_51
+ex:par_4_197_to_par_4_51 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_197 ;
+                         ex:has_transfer_to ex:par_4_51 .
+
+
+###  http://example.com/gtfs#par_4_198
+ex:par_4_198 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.42103 ;
+             ex:has_longitude -3.72033 ;
+             rdfs:label "PRINCIPE PIO" .
+
+
+###  http://example.com/gtfs#par_4_198_to_par_4_127
+ex:par_4_198_to_par_4_127 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_198 ;
+                          ex:has_transfer_to ex:par_4_127 .
+
+
+###  http://example.com/gtfs#par_4_198_to_par_4_238
+ex:par_4_198_to_par_4_238 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_198 ;
+                          ex:has_transfer_to ex:par_4_238 .
+
+
+###  http://example.com/gtfs#par_4_199
+ex:par_4_199 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.41641 ;
+             ex:has_longitude -3.73563 ;
+             rdfs:label "LAGO" .
+
+
+###  http://example.com/gtfs#par_4_1_to_par_4_164
+ex:par_4_1_to_par_4_164 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_1 ;
+                        ex:has_transfer_to ex:par_4_164 .
+
+
+###  http://example.com/gtfs#par_4_1_to_par_4_190
+ex:par_4_1_to_par_4_190 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_1 ;
+                        ex:has_transfer_to ex:par_4_190 .
+
+
+###  http://example.com/gtfs#par_4_2
+ex:par_4_2 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.46442 ;
+           ex:has_longitude -3.69506 ;
+           rdfs:label "VALDEACEDERAS" .
+
+
+###  http://example.com/gtfs#par_4_20
+ex:par_4_20 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.39554 ;
+            ex:has_longitude -3.66414 ;
+            rdfs:label "NUEVA NUMANCIA" .
+
+
+###  http://example.com/gtfs#par_4_200
+ex:par_4_200 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.40786 ;
+             ex:has_longitude -3.75311 ;
+             rdfs:label "BATAN" .
+
+
+###  http://example.com/gtfs#par_4_201
+ex:par_4_201 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.40321 ;
+             ex:has_longitude -3.76101 ;
+             rdfs:label "CASA DE CAMPO" .
+
+
+###  http://example.com/gtfs#par_4_201_to_par_4_103
+ex:par_4_201_to_par_4_103 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_201 ;
+                          ex:has_transfer_to ex:par_4_103 .
+
+
+###  http://example.com/gtfs#par_4_202
+ex:par_4_202 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.39698 ;
+             ex:has_longitude -3.77462 ;
+             rdfs:label "COLONIA JARDIN" .
+
+
+###  http://example.com/gtfs#par_4_203
+ex:par_4_203 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.37771 ;
+             ex:has_longitude -3.79152 ;
+             rdfs:label "CUATRO VIENTOS" .
+
+
+###  http://example.com/gtfs#par_4_204
+ex:par_4_204 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.34985 ;
+             ex:has_longitude -3.8072 ;
+             rdfs:label "JOAQUIN VILUMBRALES" .
+
+
+###  http://example.com/gtfs#par_4_205
+ex:par_4_205 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.34524 ;
+             ex:has_longitude -3.81211 ;
+             rdfs:label "PUERTA DEL SUR" .
+
+
+###  http://example.com/gtfs#par_4_205_to_par_4_209
+ex:par_4_205_to_par_4_209 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_205 ;
+                          ex:has_transfer_to ex:par_4_209 .
+
+
+###  http://example.com/gtfs#par_4_206
+ex:par_4_206 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.3846 ;
+             ex:has_longitude -3.71825 ;
+             rdfs:label "PLAZA ELIPTICA" .
+
+
+###  http://example.com/gtfs#par_4_206_to_par_4_107
+ex:par_4_206_to_par_4_107 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_206 ;
+                          ex:has_transfer_to ex:par_4_107 .
+
+
+###  http://example.com/gtfs#par_4_206_to_par_4_108
+ex:par_4_206_to_par_4_108 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_206 ;
+                          ex:has_transfer_to ex:par_4_108 .
+
+
+###  http://example.com/gtfs#par_4_207
+ex:par_4_207 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.38083 ;
+             ex:has_longitude -3.7279 ;
+             rdfs:label "ABRANTES" .
+
+
+###  http://example.com/gtfs#par_4_208
+ex:par_4_208 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.37587 ;
+             ex:has_longitude -3.73417 ;
+             rdfs:label "PAN BENDITO" .
+
+
+###  http://example.com/gtfs#par_4_209
+ex:par_4_209 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.34543 ;
+             ex:has_longitude -3.81249 ;
+             rdfs:label "PUERTA DEL SUR" .
+
+
+###  http://example.com/gtfs#par_4_209_to_par_4_205
+ex:par_4_209_to_par_4_205 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_209 ;
+                          ex:has_transfer_to ex:par_4_205 .
+
+
+###  http://example.com/gtfs#par_4_21
+ex:par_4_21 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.39266 ;
+            ex:has_longitude -3.65868 ;
+            rdfs:label "PORTAZGO" .
+
+
+###  http://example.com/gtfs#par_4_210
+ex:par_4_210 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.34969 ;
+             ex:has_longitude -3.8212 ;
+             rdfs:label "PARQUE LISBOA" .
+
+
+###  http://example.com/gtfs#par_4_211
+ex:par_4_211 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.35008 ;
+             ex:has_longitude -3.83178 ;
+             rdfs:label "ALCORCON CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_212
+ex:par_4_212 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.34589 ;
+             ex:has_longitude -3.84934 ;
+             rdfs:label "PARQUE OESTE" .
+
+
+###  http://example.com/gtfs#par_4_213
+ex:par_4_213 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.33512 ;
+             ex:has_longitude -3.87218 ;
+             rdfs:label "UNIVERSIDAD REY JUAN CARLOS" .
+
+
+###  http://example.com/gtfs#par_4_214
+ex:par_4_214 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.3285 ;
+             ex:has_longitude -3.86354 ;
+             rdfs:label "MOSTOLES CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_215
+ex:par_4_215 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.32168 ;
+             ex:has_longitude -3.86489 ;
+             rdfs:label "PRADILLO" .
+
+
+###  http://example.com/gtfs#par_4_216
+ex:par_4_216 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.31652 ;
+             ex:has_longitude -3.87471 ;
+             rdfs:label "HOSPITAL DE MOSTOLES" .
+
+
+###  http://example.com/gtfs#par_4_217
+ex:par_4_217 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.30903 ;
+             ex:has_longitude -3.86402 ;
+             rdfs:label "MANUELA MALASAÑA" .
+
+
+###  http://example.com/gtfs#par_4_218
+ex:par_4_218 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.29681 ;
+             ex:has_longitude -3.83768 ;
+             rdfs:label "LORANCA" .
+
+
+###  http://example.com/gtfs#par_4_219
+ex:par_4_219 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.28576 ;
+             ex:has_longitude -3.81642 ;
+             rdfs:label "HOSPITAL DE FUENLABRADA" .
+
+
+###  http://example.com/gtfs#par_4_22
+ex:par_4_22 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.39156 ;
+            ex:has_longitude -3.65391 ;
+            rdfs:label "BUENOS AIRES" .
+
+
+###  http://example.com/gtfs#par_4_220
+ex:par_4_220 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.28518 ;
+             ex:has_longitude -3.80632 ;
+             rdfs:label "PARQUE EUROPA" .
+
+
+###  http://example.com/gtfs#par_4_221
+ex:par_4_221 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.28268 ;
+             ex:has_longitude -3.79891 ;
+             rdfs:label "FUENLABRADA CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_222
+ex:par_4_222 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.28684 ;
+             ex:has_longitude -3.78697 ;
+             rdfs:label "PARQUE DE LOS ESTADOS" .
+
+
+###  http://example.com/gtfs#par_4_223
+ex:par_4_223 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.28874 ;
+             ex:has_longitude -3.75682 ;
+             rdfs:label "ARROYO CULEBRO" .
+
+
+###  http://example.com/gtfs#par_4_224
+ex:par_4_224 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.29324 ;
+             ex:has_longitude -3.74576 ;
+             rdfs:label "CONSERVATORIO" .
+
+
+###  http://example.com/gtfs#par_4_225
+ex:par_4_225 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.30081 ;
+             ex:has_longitude -3.73664 ;
+             rdfs:label "ALONSO DE MENDOZA" .
+
+
+###  http://example.com/gtfs#par_4_226
+ex:par_4_226 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.30993 ;
+             ex:has_longitude -3.73403 ;
+             rdfs:label "GETAFE CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_227
+ex:par_4_227 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.3118 ;
+             ex:has_longitude -3.72224 ;
+             rdfs:label "JUAN DE LA CIERVA" .
+
+
+###  http://example.com/gtfs#par_4_228
+ex:par_4_228 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.31862 ;
+             ex:has_longitude -3.70985 ;
+             rdfs:label "EL CASAR" .
+
+
+###  http://example.com/gtfs#par_4_229
+ex:par_4_229 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.32423 ;
+             ex:has_longitude -3.7182 ;
+             rdfs:label "LOS ESPARTALES" .
+
+
+###  http://example.com/gtfs#par_4_23
+ex:par_4_23 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.38977 ;
+            ex:has_longitude -3.64522 ;
+            rdfs:label "ALTO DEL ARENAL" .
+
+
+###  http://example.com/gtfs#par_4_230
+ex:par_4_230 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.32907 ;
+             ex:has_longitude -3.72963 ;
+             rdfs:label "EL BERCIAL" .
+
+
+###  http://example.com/gtfs#par_4_231
+ex:par_4_231 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.33664 ;
+             ex:has_longitude -3.74018 ;
+             rdfs:label "EL CARRASCAL" .
+
+
+###  http://example.com/gtfs#par_4_232
+ex:par_4_232 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.33475 ;
+             ex:has_longitude -3.75266 ;
+             rdfs:label "JULIAN BESTEIRO" .
+
+
+###  http://example.com/gtfs#par_4_233
+ex:par_4_233 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.3266 ;
+             ex:has_longitude -3.75942 ;
+             rdfs:label "CASA DEL RELOJ" .
+
+
+###  http://example.com/gtfs#par_4_234
+ex:par_4_234 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.32177 ;
+             ex:has_longitude -3.76797 ;
+             rdfs:label "HOSPITAL SEVERO OCHOA" .
+
+
+###  http://example.com/gtfs#par_4_235
+ex:par_4_235 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.32899 ;
+             ex:has_longitude -3.77154 ;
+             rdfs:label "LEGANES CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_236
+ex:par_4_236 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__12___> ;
+             ex:has_latitude 40.33616 ;
+             ex:has_longitude -3.77587 ;
+             rdfs:label "SAN NICASIO" .
+
+
+###  http://example.com/gtfs#par_4_237
+ex:par_4_237 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__R___> ;
+             ex:has_latitude 40.41809 ;
+             ex:has_longitude -3.70928 ;
+             rdfs:label "OPERA" .
+
+
+###  http://example.com/gtfs#par_4_237_to_par_4_36
+ex:par_4_237_to_par_4_36 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_237 ;
+                         ex:has_transfer_to ex:par_4_36 .
+
+
+###  http://example.com/gtfs#par_4_237_to_par_4_37
+ex:par_4_237_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_237 ;
+                         ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_237_to_par_4_49
+ex:par_4_237_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_237 ;
+                         ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_237_to_par_4_88
+ex:par_4_237_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_237 ;
+                         ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_237_to_par_4_89
+ex:par_4_237_to_par_4_89 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_237 ;
+                         ex:has_transfer_to ex:par_4_89 .
+
+
+###  http://example.com/gtfs#par_4_238
+ex:par_4_238 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__R___> ;
+             ex:has_latitude 40.42099 ;
+             ex:has_longitude -3.72033 ;
+             rdfs:label "PRINCIPE PIO" .
+
+
+###  http://example.com/gtfs#par_4_238_to_par_4_127
+ex:par_4_238_to_par_4_127 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_238 ;
+                          ex:has_transfer_to ex:par_4_127 .
+
+
+###  http://example.com/gtfs#par_4_238_to_par_4_198
+ex:par_4_238_to_par_4_198 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_238 ;
+                          ex:has_transfer_to ex:par_4_198 .
+
+
+###  http://example.com/gtfs#par_4_24
+ex:par_4_24 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.38732 ;
+            ex:has_longitude -3.63951 ;
+            rdfs:label "MIGUEL HERNANDEZ" .
+
+
+###  http://example.com/gtfs#par_4_25
+ex:par_4_25 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.38216 ;
+            ex:has_longitude -3.62472 ;
+            rdfs:label "SIERRA DE GUADALUPE" .
+
+
+###  http://example.com/gtfs#par_4_252
+ex:par_4_252 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.45779 ;
+             ex:has_longitude -3.58752 ;
+             rdfs:label "ALAMEDA DE OSUNA" .
+
+
+###  http://example.com/gtfs#par_4_253
+ex:par_4_253 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__5___> ;
+             ex:has_latitude 40.45347 ;
+             ex:has_longitude -3.59401 ;
+             rdfs:label "EL CAPRICHO" .
+
+
+###  http://example.com/gtfs#par_4_254
+ex:par_4_254 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.3736 ;
+             ex:has_longitude -3.7391 ;
+             rdfs:label "SAN FRANCISCO" .
+
+
+###  http://example.com/gtfs#par_4_255
+ex:par_4_255 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.372 ;
+             ex:has_longitude -3.75191 ;
+             rdfs:label "CARABANCHEL ALTO" .
+
+
+###  http://example.com/gtfs#par_4_256
+ex:par_4_256 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.36422 ;
+             ex:has_longitude -3.7569 ;
+             rdfs:label "LA PESETA" .
+
+
+###  http://example.com/gtfs#par_4_257
+ex:par_4_257 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.38364 ;
+             ex:has_longitude -3.78392 ;
+             rdfs:label "AVIACION ESPAÑOLA" .
+
+
+###  http://example.com/gtfs#par_4_258
+ex:par_4_258 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.468 ;
+             ex:has_longitude -3.64867 ;
+             rdfs:label "PINAR DEL REY" .
+
+
+###  http://example.com/gtfs#par_4_259
+ex:par_4_259 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__6___> ;
+             ex:has_latitude 40.3931 ;
+             ex:has_longitude -3.68864 ;
+             rdfs:label "ARGANZUELA-PLANETARIO" .
+
+
+###  http://example.com/gtfs#par_4_26
+ex:par_4_26 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.3796 ;
+            ex:has_longitude -3.6213 ;
+            rdfs:label "VILLA DE VALLECAS" .
+
+
+###  http://example.com/gtfs#par_4_260
+ex:par_4_260 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__2___> ;
+             ex:has_latitude 40.42662 ;
+             ex:has_longitude -3.65052 ;
+             rdfs:label "LA ELIPA" .
+
+
+###  http://example.com/gtfs#par_4_261
+ex:par_4_261 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.47203 ;
+             ex:has_longitude -3.68259 ;
+             rdfs:label "CHAMARTIN" .
+
+
+###  http://example.com/gtfs#par_4_261_to_par_4_189
+ex:par_4_261_to_par_4_189 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_261 ;
+                          ex:has_transfer_to ex:par_4_189 .
+
+
+###  http://example.com/gtfs#par_4_262
+ex:par_4_262 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.47682 ;
+             ex:has_longitude -3.67637 ;
+             rdfs:label "BAMBU" .
+
+
+###  http://example.com/gtfs#par_4_263
+ex:par_4_263 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.48014 ;
+             ex:has_longitude -3.6668 ;
+             rdfs:label "PINAR DE CHAMARTIN" .
+
+
+###  http://example.com/gtfs#par_4_263_to_par_4_265
+ex:par_4_263_to_par_4_265 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_263 ;
+                          ex:has_transfer_to ex:par_4_265 .
+
+
+###  http://example.com/gtfs#par_4_263_to_par_4_266
+ex:par_4_263_to_par_4_266 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_263 ;
+                          ex:has_transfer_to ex:par_4_266 .
+
+
+###  http://example.com/gtfs#par_4_264
+ex:par_4_264 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__4___> ;
+             ex:has_latitude 40.47537 ;
+             ex:has_longitude -3.65257 ;
+             rdfs:label "HORTALEZA" .
+
+
+###  http://example.com/gtfs#par_4_265
+ex:par_4_265 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__4___> ;
+             ex:has_latitude 40.47687 ;
+             ex:has_longitude -3.6629 ;
+             rdfs:label "MANOTERAS" .
+
+
+###  http://example.com/gtfs#par_4_265_to_par_4_263
+ex:par_4_265_to_par_4_263 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_265 ;
+                          ex:has_transfer_to ex:par_4_263 .
+
+
+###  http://example.com/gtfs#par_4_266
+ex:par_4_266 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__4___> ;
+             ex:has_latitude 40.48014 ;
+             ex:has_longitude -3.66676 ;
+             rdfs:label "PINAR DE CHAMARTIN" .
+
+
+###  http://example.com/gtfs#par_4_266_to_par_4_263
+ex:par_4_266_to_par_4_263 rdf:type owl:NamedIndividual ,
+                                   ex:Transfer ;
+                          ex:has_transfer_from ex:par_4_266 ;
+                          ex:has_transfer_to ex:par_4_263 .
+
+
+###  http://example.com/gtfs#par_4_267
+ex:par_4_267 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.38409 ;
+             ex:has_longitude -3.69788 ;
+             rdfs:label "ALMENDRALES" .
+
+
+###  http://example.com/gtfs#par_4_268
+ex:par_4_268 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.37503 ;
+             ex:has_longitude -3.69585 ;
+             rdfs:label "HOSPITAL 12 DE OCTUBRE" .
+
+
+###  http://example.com/gtfs#par_4_269
+ex:par_4_269 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.36999 ;
+             ex:has_longitude -3.69418 ;
+             rdfs:label "SAN FERMIN-ORCASUR" .
+
+
+###  http://example.com/gtfs#par_4_27
+ex:par_4_27 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__1___> ;
+            ex:has_latitude 40.37238 ;
+            ex:has_longitude -3.61884 ;
+            rdfs:label "CONGOSTO" .
+
+
+###  http://example.com/gtfs#par_4_270
+ex:par_4_270 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.35959 ;
+             ex:has_longitude -3.69363 ;
+             rdfs:label "CIUDAD DE LOS ANGELES" .
+
+
+###  http://example.com/gtfs#par_4_271
+ex:par_4_271 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.35089 ;
+             ex:has_longitude -3.69265 ;
+             rdfs:label "VILLAVERDE BAJO CRUCE" .
+
+
+###  http://example.com/gtfs#par_4_272
+ex:par_4_272 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.34154 ;
+             ex:has_longitude -3.69318 ;
+             rdfs:label "SAN CRISTOBAL" .
+
+
+###  http://example.com/gtfs#par_4_273
+ex:par_4_273 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__3___> ;
+             ex:has_latitude 40.34123 ;
+             ex:has_longitude -3.71199 ;
+             rdfs:label "VILLAVERDE ALTO" .
+
+
+###  http://example.com/gtfs#par_4_274
+ex:par_4_274 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.5012 ;
+             ex:has_longitude -3.6952 ;
+             rdfs:label "TRES OLIVOS" .
+
+
+###  http://example.com/gtfs#par_4_275
+ex:par_4_275 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.50525 ;
+             ex:has_longitude -3.69575 ;
+             rdfs:label "MONTECARMELO" .
+
+
+###  http://example.com/gtfs#par_4_276
+ex:par_4_276 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.50833 ;
+             ex:has_longitude -3.66944 ;
+             rdfs:label "LAS TABLAS" .
+
+
+###  http://example.com/gtfs#par_4_277
+ex:par_4_277 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.51553 ;
+             ex:has_longitude -3.66277 ;
+             rdfs:label "RONDA DE LA COMUNICACION" .
+
+
+###  http://example.com/gtfs#par_4_278
+ex:par_4_278 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.5276 ;
+             ex:has_longitude -3.65859 ;
+             rdfs:label "LA GRANJA" .
+
+
+###  http://example.com/gtfs#par_4_279
+ex:par_4_279 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.53196 ;
+             ex:has_longitude -3.63556 ;
+             rdfs:label "LA MORALEJA" .
+
+
+###  http://example.com/gtfs#par_4_28
+ex:par_4_28 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.43088 ;
+            ex:has_longitude -3.66366 ;
+            rdfs:label "VENTAS" .
+
+
+###  http://example.com/gtfs#par_4_280
+ex:par_4_280 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.54102 ;
+             ex:has_longitude -3.63738 ;
+             rdfs:label "MARQUES DE LA VALDAVIA" .
+
+
+###  http://example.com/gtfs#par_4_281
+ex:par_4_281 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.55048 ;
+             ex:has_longitude -3.64688 ;
+             rdfs:label "MANUEL DE FALLA" .
+
+
+###  http://example.com/gtfs#par_4_282
+ex:par_4_282 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.55442 ;
+             ex:has_longitude -3.63513 ;
+             rdfs:label "BAUNATAL" .
+
+
+###  http://example.com/gtfs#par_4_283
+ex:par_4_283 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.55037 ;
+             ex:has_longitude -3.6234 ;
+             rdfs:label "REYES CATOLICOS" .
+
+
+###  http://example.com/gtfs#par_4_284
+ex:par_4_284 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__10___> ;
+             ex:has_latitude 40.55977 ;
+             ex:has_longitude -3.61145 ;
+             rdfs:label "HOSPITAL INFANTA SOFIA" .
+
+
+###  http://example.com/gtfs#par_4_285
+ex:par_4_285 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__8___> ;
+             ex:has_latitude 40.49177 ;
+             ex:has_longitude -3.59325 ;
+             rdfs:label "AEROPUERTO T-4" .
+
+
+###  http://example.com/gtfs#par_4_286
+ex:par_4_286 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.43339 ;
+             ex:has_longitude -3.60015 ;
+             rdfs:label "ESTADIO METROPOLITANO" .
+
+
+###  http://example.com/gtfs#par_4_287
+ex:par_4_287 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.4225 ;
+             ex:has_longitude -3.56919 ;
+             rdfs:label "BARRIO DEL PUERTO" .
+
+
+###  http://example.com/gtfs#par_4_288
+ex:par_4_288 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42374 ;
+             ex:has_longitude -3.56119 ;
+             rdfs:label "COSLADA CENTRAL" .
+
+
+###  http://example.com/gtfs#par_4_289
+ex:par_4_289 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42514 ;
+             ex:has_longitude -3.54792 ;
+             rdfs:label "LA RAMBLA" .
+
+
+###  http://example.com/gtfs#par_4_28_to_par_4_81
+ex:par_4_28_to_par_4_81 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_28 ;
+                        ex:has_transfer_to ex:par_4_81 .
+
+
+###  http://example.com/gtfs#par_4_29
+ex:par_4_29 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.4279 ;
+            ex:has_longitude -3.66926 ;
+            rdfs:label "MANUEL BECERRA" .
+
+
+###  http://example.com/gtfs#par_4_290
+ex:par_4_290 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42441 ;
+             ex:has_longitude -3.53541 ;
+             rdfs:label "SAN FERNANDO" .
+
+
+###  http://example.com/gtfs#par_4_291
+ex:par_4_291 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.42295 ;
+             ex:has_longitude -3.52549 ;
+             rdfs:label "JARAMA" .
+
+
+###  http://example.com/gtfs#par_4_292
+ex:par_4_292 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.41777 ;
+             ex:has_longitude -3.52718 ;
+             rdfs:label "HENARES" .
+
+
+###  http://example.com/gtfs#par_4_293
+ex:par_4_293 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.37019 ;
+             ex:has_longitude -3.61346 ;
+             rdfs:label "LA GAVIA" .
+
+
+###  http://example.com/gtfs#par_4_294
+ex:par_4_294 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.36323 ;
+             ex:has_longitude -3.59953 ;
+             rdfs:label "LAS SUERTES" .
+
+
+###  http://example.com/gtfs#par_4_295
+ex:par_4_295 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__1___> ;
+             ex:has_latitude 40.36007 ;
+             ex:has_longitude -3.59316 ;
+             rdfs:label "VALDECARROS" .
+
+
+###  http://example.com/gtfs#par_4_296
+ex:par_4_296 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__7___> ;
+             ex:has_latitude 40.41761 ;
+             ex:has_longitude -3.53453 ;
+             rdfs:label "HOSPITAL DEL HENARES" .
+
+
+###  http://example.com/gtfs#par_4_29_to_par_4_116
+ex:par_4_29_to_par_4_116 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_29 ;
+                         ex:has_transfer_to ex:par_4_116 .
+
+
+###  http://example.com/gtfs#par_4_3
+ex:par_4_3 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.46055 ;
+           ex:has_longitude -3.69825 ;
+           rdfs:label "TETUAN" .
+
+
+###  http://example.com/gtfs#par_4_30
+ex:par_4_30 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.42455 ;
+            ex:has_longitude -3.67591 ;
+            rdfs:label "GOYA" .
+
+
+###  http://example.com/gtfs#par_4_300
+ex:par_4_300 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.34134 ;
+             ex:has_longitude -3.52479 ;
+             rdfs:label "RIVAS FUTURA" .
+
+
+###  http://example.com/gtfs#par_4_305
+ex:par_4_305 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__11___> ;
+             ex:has_latitude 40.35795 ;
+             ex:has_longitude -3.77783 ;
+             rdfs:label "LA FORTUNA" .
+
+
+###  http://example.com/gtfs#par_4_30_to_par_4_172
+ex:par_4_30_to_par_4_172 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_30 ;
+                         ex:has_transfer_to ex:par_4_172 .
+
+
+###  http://example.com/gtfs#par_4_30_to_par_4_61
+ex:par_4_30_to_par_4_61 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_30 ;
+                        ex:has_transfer_to ex:par_4_61 .
+
+
+###  http://example.com/gtfs#par_4_31
+ex:par_4_31 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.42294 ;
+            ex:has_longitude -3.68012 ;
+            rdfs:label "PRINCIPE DE VERGARA" .
+
+
+###  http://example.com/gtfs#par_4_31_to_par_4_172
+ex:par_4_31_to_par_4_172 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_31 ;
+                         ex:has_transfer_to ex:par_4_172 .
+
+
+###  http://example.com/gtfs#par_4_31_to_par_4_60
+ex:par_4_31_to_par_4_60 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_31 ;
+                        ex:has_transfer_to ex:par_4_60 .
+
+
+###  http://example.com/gtfs#par_4_31_to_par_4_61
+ex:par_4_31_to_par_4_61 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_31 ;
+                        ex:has_transfer_to ex:par_4_61 .
+
+
+###  http://example.com/gtfs#par_4_32
+ex:par_4_32 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.42031 ;
+            ex:has_longitude -3.68624 ;
+            rdfs:label "RETIRO" .
+
+
+###  http://example.com/gtfs#par_4_322
+ex:par_4_322 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__2___> ;
+             ex:has_latitude 40.42361 ;
+             ex:has_longitude -3.63914 ;
+             rdfs:label "LA ALMUDENA" .
+
+
+###  http://example.com/gtfs#par_4_323
+ex:par_4_323 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__2___> ;
+             ex:has_latitude 40.41829 ;
+             ex:has_longitude -3.62351 ;
+             rdfs:label "ALSACIA" .
+
+
+###  http://example.com/gtfs#par_4_324
+ex:par_4_324 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__2___> ;
+             ex:has_latitude 40.42239 ;
+             ex:has_longitude -3.61206 ;
+             rdfs:label "AVENIDA DE GUADALAJARA" .
+
+
+###  http://example.com/gtfs#par_4_325
+ex:par_4_325 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__2___> ;
+             ex:has_latitude 40.42375 ;
+             ex:has_longitude -3.60331 ;
+             rdfs:label "LAS ROSAS" .
+
+
+###  http://example.com/gtfs#par_4_326
+ex:par_4_326 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.4911 ;
+             ex:has_longitude -3.71634 ;
+             rdfs:label "MIRASIERRA" .
+
+
+###  http://example.com/gtfs#par_4_33
+ex:par_4_33 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.41922 ;
+            ex:has_longitude -3.69497 ;
+            rdfs:label "BANCO DE ESPAÑA" .
+
+
+###  http://example.com/gtfs#par_4_33_to_par_4_86
+ex:par_4_33_to_par_4_86 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_33 ;
+                        ex:has_transfer_to ex:par_4_86 .
+
+
+###  http://example.com/gtfs#par_4_34
+ex:par_4_34 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.41805 ;
+            ex:has_longitude -3.69925 ;
+            rdfs:label "SEVILLA" .
+
+
+###  http://example.com/gtfs#par_4_345
+ex:par_4_345 rdf:type owl:NamedIndividual ,
+                      ex:Stop ;
+             ex:has_route <http://example.com/gtfs#4__9___> ;
+             ex:has_latitude 40.49965 ;
+             ex:has_longitude -3.70908 ;
+             rdfs:label "PACO DE LUCIA" .
+
+
+###  http://example.com/gtfs#par_4_34_to_par_4_11
+ex:par_4_34_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_34 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_34_to_par_4_12
+ex:par_4_34_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_34 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_34_to_par_4_48
+ex:par_4_34_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_34 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_34_to_par_4_87
+ex:par_4_34_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_34 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_35
+ex:par_4_35 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.41685 ;
+            ex:has_longitude -3.70326 ;
+            rdfs:label "SOL" .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_11
+ex:par_4_35_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_12
+ex:par_4_35_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_48
+ex:par_4_35_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_49
+ex:par_4_35_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_87
+ex:par_4_35_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_35_to_par_4_88
+ex:par_4_35_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_35 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_36
+ex:par_4_36 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.41809 ;
+            ex:has_longitude -3.70942 ;
+            rdfs:label "OPERA" .
+
+
+###  http://example.com/gtfs#par_4_36_to_par_4_237
+ex:par_4_36_to_par_4_237 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_36 ;
+                         ex:has_transfer_to ex:par_4_237 .
+
+
+###  http://example.com/gtfs#par_4_36_to_par_4_49
+ex:par_4_36_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_36 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_36_to_par_4_88
+ex:par_4_36_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_36 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_36_to_par_4_89
+ex:par_4_36_to_par_4_89 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_36 ;
+                        ex:has_transfer_to ex:par_4_89 .
+
+
+###  http://example.com/gtfs#par_4_37
+ex:par_4_37 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.42132 ;
+            ex:has_longitude -3.70796 ;
+            rdfs:label "SANTO DOMINGO" .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_197
+ex:par_4_37_to_par_4_197 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_37 ;
+                         ex:has_transfer_to ex:par_4_197 .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_237
+ex:par_4_37_to_par_4_237 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_37 ;
+                         ex:has_transfer_to ex:par_4_237 .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_49
+ex:par_4_37_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_37 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_50
+ex:par_4_37_to_par_4_50 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_37 ;
+                        ex:has_transfer_to ex:par_4_50 .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_88
+ex:par_4_37_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_37 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_37_to_par_4_89
+ex:par_4_37_to_par_4_89 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_37 ;
+                        ex:has_transfer_to ex:par_4_89 .
+
+
+###  http://example.com/gtfs#par_4_38
+ex:par_4_38 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.42484 ;
+            ex:has_longitude -3.70742 ;
+            rdfs:label "NOVICIADO" .
+
+
+###  http://example.com/gtfs#par_4_38_to_par_4_196
+ex:par_4_38_to_par_4_196 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_38 ;
+                         ex:has_transfer_to ex:par_4_196 .
+
+
+###  http://example.com/gtfs#par_4_38_to_par_4_197
+ex:par_4_38_to_par_4_197 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_38 ;
+                         ex:has_transfer_to ex:par_4_197 .
+
+
+###  http://example.com/gtfs#par_4_38_to_par_4_50
+ex:par_4_38_to_par_4_50 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_38 ;
+                        ex:has_transfer_to ex:par_4_50 .
+
+
+###  http://example.com/gtfs#par_4_39
+ex:par_4_39 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.43001 ;
+            ex:has_longitude -3.70557 ;
+            rdfs:label "SAN BERNARDO" .
+
+
+###  http://example.com/gtfs#par_4_39_to_par_4_55
+ex:par_4_39_to_par_4_55 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_39 ;
+                        ex:has_transfer_to ex:par_4_55 .
+
+
+###  http://example.com/gtfs#par_4_39_to_par_4_56
+ex:par_4_39_to_par_4_56 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_39 ;
+                        ex:has_transfer_to ex:par_4_56 .
+
+
+###  http://example.com/gtfs#par_4_39_to_par_4_9
+ex:par_4_39_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_39 ;
+                       ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_4
+ex:par_4_4 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.45429 ;
+           ex:has_longitude -3.70302 ;
+           rdfs:label "ESTRECHO" .
+
+
+###  http://example.com/gtfs#par_4_40
+ex:par_4_40 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.43322 ;
+            ex:has_longitude -3.70433 ;
+            rdfs:label "QUEVEDO" .
+
+
+###  http://example.com/gtfs#par_4_40_to_par_4_55
+ex:par_4_40_to_par_4_55 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_40 ;
+                        ex:has_transfer_to ex:par_4_55 .
+
+
+###  http://example.com/gtfs#par_4_40_to_par_4_8
+ex:par_4_40_to_par_4_8 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_40 ;
+                       ex:has_transfer_to ex:par_4_8 .
+
+
+###  http://example.com/gtfs#par_4_40_to_par_4_9
+ex:par_4_40_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_40 ;
+                       ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_41
+ex:par_4_41 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.43841 ;
+            ex:has_longitude -3.70433 ;
+            rdfs:label "CANAL" .
+
+
+###  http://example.com/gtfs#par_4_41_to_par_4_143
+ex:par_4_41_to_par_4_143 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_41 ;
+                         ex:has_transfer_to ex:par_4_143 .
+
+
+###  http://example.com/gtfs#par_4_41_to_par_4_144
+ex:par_4_41_to_par_4_144 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_41 ;
+                         ex:has_transfer_to ex:par_4_144 .
+
+
+###  http://example.com/gtfs#par_4_41_to_par_4_7
+ex:par_4_41_to_par_4_7 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_41 ;
+                       ex:has_transfer_to ex:par_4_7 .
+
+
+###  http://example.com/gtfs#par_4_42
+ex:par_4_42 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__2___> ;
+            ex:has_latitude 40.44697 ;
+            ex:has_longitude -3.70392 ;
+            rdfs:label "CUATRO CAMINOS" .
+
+
+###  http://example.com/gtfs#par_4_42_to_par_4_121
+ex:par_4_42_to_par_4_121 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_42 ;
+                         ex:has_transfer_to ex:par_4_121 .
+
+
+###  http://example.com/gtfs#par_4_42_to_par_4_5
+ex:par_4_42_to_par_4_5 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_42 ;
+                       ex:has_transfer_to ex:par_4_5 .
+
+
+###  http://example.com/gtfs#par_4_42_to_par_4_6
+ex:par_4_42_to_par_4_6 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_42 ;
+                       ex:has_transfer_to ex:par_4_6 .
+
+
+###  http://example.com/gtfs#par_4_43
+ex:par_4_43 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.39116 ;
+            ex:has_longitude -3.69511 ;
+            rdfs:label "LEGAZPI" .
+
+
+###  http://example.com/gtfs#par_4_43_to_par_4_110
+ex:par_4_43_to_par_4_110 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_43 ;
+                         ex:has_transfer_to ex:par_4_110 .
+
+
+###  http://example.com/gtfs#par_4_44
+ex:par_4_44 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.3999 ;
+            ex:has_longitude -3.6942 ;
+            rdfs:label "DELICIAS" .
+
+
+###  http://example.com/gtfs#par_4_45
+ex:par_4_45 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.40307 ;
+            ex:has_longitude -3.69423 ;
+            rdfs:label "PALOS DE LA FRONTERA" .
+
+
+###  http://example.com/gtfs#par_4_46
+ex:par_4_46 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.40513 ;
+            ex:has_longitude -3.70268 ;
+            rdfs:label "EMBAJADORES" .
+
+
+###  http://example.com/gtfs#par_4_46_to_par_4_92
+ex:par_4_46_to_par_4_92 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_46 ;
+                        ex:has_transfer_to ex:par_4_92 .
+
+
+###  http://example.com/gtfs#par_4_47
+ex:par_4_47 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.40851 ;
+            ex:has_longitude -3.7009 ;
+            rdfs:label "LAVAPIES" .
+
+
+###  http://example.com/gtfs#par_4_47_to_par_4_14
+ex:par_4_47_to_par_4_14 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_47 ;
+                        ex:has_transfer_to ex:par_4_14 .
+
+
+###  http://example.com/gtfs#par_4_48
+ex:par_4_48 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.41682 ;
+            ex:has_longitude -3.70326 ;
+            rdfs:label "SOL" .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_11
+ex:par_4_48_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_12
+ex:par_4_48_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_34
+ex:par_4_48_to_par_4_34 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_34 .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_35
+ex:par_4_48_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_87
+ex:par_4_48_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_48_to_par_4_88
+ex:par_4_48_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_48 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_49
+ex:par_4_49 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.42014 ;
+            ex:has_longitude -3.70566 ;
+            rdfs:label "CALLAO" .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_11
+ex:par_4_49_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_12
+ex:par_4_49_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_237
+ex:par_4_49_to_par_4_237 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_49 ;
+                         ex:has_transfer_to ex:par_4_237 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_35
+ex:par_4_49_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_36
+ex:par_4_49_to_par_4_36 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_36 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_37
+ex:par_4_49_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_87
+ex:par_4_49_to_par_4_87 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_87 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_88
+ex:par_4_49_to_par_4_88 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_88 .
+
+
+###  http://example.com/gtfs#par_4_49_to_par_4_89
+ex:par_4_49_to_par_4_89 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_49 ;
+                        ex:has_transfer_to ex:par_4_89 .
+
+
+###  http://example.com/gtfs#par_4_5
+ex:par_4_5 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.45033 ;
+           ex:has_longitude -3.70331 ;
+           rdfs:label "ALVARADO" .
+
+
+###  http://example.com/gtfs#par_4_50
+ex:par_4_50 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.42342 ;
+            ex:has_longitude -3.7112 ;
+            rdfs:label "PLAZA DE ESPAÑA" .
+
+
+###  http://example.com/gtfs#par_4_50_to_par_4_197
+ex:par_4_50_to_par_4_197 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_50 ;
+                         ex:has_transfer_to ex:par_4_197 .
+
+
+###  http://example.com/gtfs#par_4_50_to_par_4_37
+ex:par_4_50_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_50 ;
+                        ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_50_to_par_4_38
+ex:par_4_50_to_par_4_38 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_50 ;
+                        ex:has_transfer_to ex:par_4_38 .
+
+
+###  http://example.com/gtfs#par_4_51
+ex:par_4_51 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.42709 ;
+            ex:has_longitude -3.71341 ;
+            rdfs:label "VENTURA RODRIGUEZ" .
+
+
+###  http://example.com/gtfs#par_4_51_to_par_4_126
+ex:par_4_51_to_par_4_126 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_51 ;
+                         ex:has_transfer_to ex:par_4_126 .
+
+
+###  http://example.com/gtfs#par_4_51_to_par_4_197
+ex:par_4_51_to_par_4_197 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_51 ;
+                         ex:has_transfer_to ex:par_4_197 .
+
+
+###  http://example.com/gtfs#par_4_51_to_par_4_54
+ex:par_4_51_to_par_4_54 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_51 ;
+                        ex:has_transfer_to ex:par_4_54 .
+
+
+###  http://example.com/gtfs#par_4_52
+ex:par_4_52 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.43066 ;
+            ex:has_longitude -3.71596 ;
+            rdfs:label "ARGÜELLES" .
+
+
+###  http://example.com/gtfs#par_4_52_to_par_4_126
+ex:par_4_52_to_par_4_126 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_52 ;
+                         ex:has_transfer_to ex:par_4_126 .
+
+
+###  http://example.com/gtfs#par_4_52_to_par_4_54
+ex:par_4_52_to_par_4_54 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_52 ;
+                        ex:has_transfer_to ex:par_4_54 .
+
+
+###  http://example.com/gtfs#par_4_53
+ex:par_4_53 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__3___> ;
+            ex:has_latitude 40.43502 ;
+            ex:has_longitude -3.71945 ;
+            rdfs:label "MONCLOA" .
+
+
+###  http://example.com/gtfs#par_4_53_to_par_4_125
+ex:par_4_53_to_par_4_125 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_53 ;
+                         ex:has_transfer_to ex:par_4_125 .
+
+
+###  http://example.com/gtfs#par_4_54
+ex:par_4_54 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.4306 ;
+            ex:has_longitude -3.71596 ;
+            rdfs:label "ARGÜELLES" .
+
+
+###  http://example.com/gtfs#par_4_54_to_par_4_126
+ex:par_4_54_to_par_4_126 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_54 ;
+                         ex:has_transfer_to ex:par_4_126 .
+
+
+###  http://example.com/gtfs#par_4_54_to_par_4_51
+ex:par_4_54_to_par_4_51 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_54 ;
+                        ex:has_transfer_to ex:par_4_51 .
+
+
+###  http://example.com/gtfs#par_4_54_to_par_4_52
+ex:par_4_54_to_par_4_52 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_54 ;
+                        ex:has_transfer_to ex:par_4_52 .
+
+
+###  http://example.com/gtfs#par_4_55
+ex:par_4_55 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42966 ;
+            ex:has_longitude -3.70567 ;
+            rdfs:label "SAN BERNARDO" .
+
+
+###  http://example.com/gtfs#par_4_55_to_par_4_39
+ex:par_4_55_to_par_4_39 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_55 ;
+                        ex:has_transfer_to ex:par_4_39 .
+
+
+###  http://example.com/gtfs#par_4_55_to_par_4_40
+ex:par_4_55_to_par_4_40 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_55 ;
+                        ex:has_transfer_to ex:par_4_40 .
+
+
+###  http://example.com/gtfs#par_4_55_to_par_4_9
+ex:par_4_55_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_55 ;
+                       ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_56
+ex:par_4_56 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42885 ;
+            ex:has_longitude -3.70114 ;
+            rdfs:label "BILBAO" .
+
+
+###  http://example.com/gtfs#par_4_56_to_par_4_10
+ex:par_4_56_to_par_4_10 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_56 ;
+                        ex:has_transfer_to ex:par_4_10 .
+
+
+###  http://example.com/gtfs#par_4_56_to_par_4_195
+ex:par_4_56_to_par_4_195 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_56 ;
+                         ex:has_transfer_to ex:par_4_195 .
+
+
+###  http://example.com/gtfs#par_4_56_to_par_4_196
+ex:par_4_56_to_par_4_196 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_56 ;
+                         ex:has_transfer_to ex:par_4_196 .
+
+
+###  http://example.com/gtfs#par_4_56_to_par_4_39
+ex:par_4_56_to_par_4_39 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_56 ;
+                        ex:has_transfer_to ex:par_4_39 .
+
+
+###  http://example.com/gtfs#par_4_56_to_par_4_9
+ex:par_4_56_to_par_4_9 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_56 ;
+                       ex:has_transfer_to ex:par_4_9 .
+
+
+###  http://example.com/gtfs#par_4_57
+ex:par_4_57 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42772 ;
+            ex:has_longitude -3.69594 ;
+            rdfs:label "ALONSO MARTINEZ" .
+
+
+###  http://example.com/gtfs#par_4_57_to_par_4_10
+ex:par_4_57_to_par_4_10 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_57 ;
+                        ex:has_transfer_to ex:par_4_10 .
+
+
+###  http://example.com/gtfs#par_4_57_to_par_4_195
+ex:par_4_57_to_par_4_195 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_57 ;
+                         ex:has_transfer_to ex:par_4_195 .
+
+
+###  http://example.com/gtfs#par_4_57_to_par_4_85
+ex:par_4_57_to_par_4_85 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_57 ;
+                        ex:has_transfer_to ex:par_4_85 .
+
+
+###  http://example.com/gtfs#par_4_58
+ex:par_4_58 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42542 ;
+            ex:has_longitude -3.69101 ;
+            rdfs:label "COLON" .
+
+
+###  http://example.com/gtfs#par_4_58_to_par_4_85
+ex:par_4_58_to_par_4_85 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_58 ;
+                        ex:has_transfer_to ex:par_4_85 .
+
+
+###  http://example.com/gtfs#par_4_59
+ex:par_4_59 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42543 ;
+            ex:has_longitude -3.68663 ;
+            rdfs:label "SERRANO" .
+
+
+###  http://example.com/gtfs#par_4_5_to_par_4_121
+ex:par_4_5_to_par_4_121 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_5 ;
+                        ex:has_transfer_to ex:par_4_121 .
+
+
+###  http://example.com/gtfs#par_4_5_to_par_4_42
+ex:par_4_5_to_par_4_42 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_5 ;
+                       ex:has_transfer_to ex:par_4_42 .
+
+
+###  http://example.com/gtfs#par_4_6
+ex:par_4_6 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.44697 ;
+           ex:has_longitude -3.70397 ;
+           rdfs:label "CUATRO CAMINOS" .
+
+
+###  http://example.com/gtfs#par_4_60
+ex:par_4_60 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42503 ;
+            ex:has_longitude -3.68292 ;
+            rdfs:label "VELAZQUEZ" .
+
+
+###  http://example.com/gtfs#par_4_60_to_par_4_172
+ex:par_4_60_to_par_4_172 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_60 ;
+                         ex:has_transfer_to ex:par_4_172 .
+
+
+###  http://example.com/gtfs#par_4_60_to_par_4_31
+ex:par_4_60_to_par_4_31 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_60 ;
+                        ex:has_transfer_to ex:par_4_31 .
+
+
+###  http://example.com/gtfs#par_4_61
+ex:par_4_61 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42481 ;
+            ex:has_longitude -3.67685 ;
+            rdfs:label "GOYA" .
+
+
+###  http://example.com/gtfs#par_4_61_to_par_4_172
+ex:par_4_61_to_par_4_172 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_61 ;
+                         ex:has_transfer_to ex:par_4_172 .
+
+
+###  http://example.com/gtfs#par_4_61_to_par_4_30
+ex:par_4_61_to_par_4_30 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_61 ;
+                        ex:has_transfer_to ex:par_4_30 .
+
+
+###  http://example.com/gtfs#par_4_61_to_par_4_31
+ex:par_4_61_to_par_4_31 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_61 ;
+                        ex:has_transfer_to ex:par_4_31 .
+
+
+###  http://example.com/gtfs#par_4_62
+ex:par_4_62 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.42917 ;
+            ex:has_longitude -3.67541 ;
+            rdfs:label "LISTA" .
+
+
+###  http://example.com/gtfs#par_4_62_to_par_4_117
+ex:par_4_62_to_par_4_117 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_62 ;
+                         ex:has_transfer_to ex:par_4_117 .
+
+
+###  http://example.com/gtfs#par_4_62_to_par_4_171
+ex:par_4_62_to_par_4_171 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_62 ;
+                         ex:has_transfer_to ex:par_4_171 .
+
+
+###  http://example.com/gtfs#par_4_62_to_par_4_82
+ex:par_4_62_to_par_4_82 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_62 ;
+                        ex:has_transfer_to ex:par_4_82 .
+
+
+###  http://example.com/gtfs#par_4_63
+ex:par_4_63 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.43468 ;
+            ex:has_longitude -3.67495 ;
+            rdfs:label "DIEGO DE LEON" .
+
+
+###  http://example.com/gtfs#par_4_63_to_par_4_117
+ex:par_4_63_to_par_4_117 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_63 ;
+                         ex:has_transfer_to ex:par_4_117 .
+
+
+###  http://example.com/gtfs#par_4_63_to_par_4_118
+ex:par_4_63_to_par_4_118 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_63 ;
+                         ex:has_transfer_to ex:par_4_118 .
+
+
+###  http://example.com/gtfs#par_4_63_to_par_4_141
+ex:par_4_63_to_par_4_141 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_63 ;
+                         ex:has_transfer_to ex:par_4_141 .
+
+
+###  http://example.com/gtfs#par_4_63_to_par_4_170
+ex:par_4_63_to_par_4_170 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_63 ;
+                         ex:has_transfer_to ex:par_4_170 .
+
+
+###  http://example.com/gtfs#par_4_63_to_par_4_82
+ex:par_4_63_to_par_4_82 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_63 ;
+                        ex:has_transfer_to ex:par_4_82 .
+
+
+###  http://example.com/gtfs#par_4_64
+ex:par_4_64 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.43803 ;
+            ex:has_longitude -3.67664 ;
+            rdfs:label "AVENIDA DE AMERICA" .
+
+
+###  http://example.com/gtfs#par_4_64_to_par_4_118
+ex:par_4_64_to_par_4_118 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_64 ;
+                         ex:has_transfer_to ex:par_4_118 .
+
+
+###  http://example.com/gtfs#par_4_64_to_par_4_140
+ex:par_4_64_to_par_4_140 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_64 ;
+                         ex:has_transfer_to ex:par_4_140 .
+
+
+###  http://example.com/gtfs#par_4_64_to_par_4_141
+ex:par_4_64_to_par_4_141 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_64 ;
+                         ex:has_transfer_to ex:par_4_141 .
+
+
+###  http://example.com/gtfs#par_4_64_to_par_4_170
+ex:par_4_64_to_par_4_170 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_64 ;
+                         ex:has_transfer_to ex:par_4_170 .
+
+
+###  http://example.com/gtfs#par_4_65
+ex:par_4_65 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.44419 ;
+            ex:has_longitude -3.67482 ;
+            rdfs:label "PROSPERIDAD" .
+
+
+###  http://example.com/gtfs#par_4_65_to_par_4_169
+ex:par_4_65_to_par_4_169 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_65 ;
+                         ex:has_transfer_to ex:par_4_169 .
+
+
+###  http://example.com/gtfs#par_4_66
+ex:par_4_66 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.44825 ;
+            ex:has_longitude -3.66791 ;
+            rdfs:label "ALFONSO XIII" .
+
+
+###  http://example.com/gtfs#par_4_67
+ex:par_4_67 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.45354 ;
+            ex:has_longitude -3.66118 ;
+            rdfs:label "AVENIDA DE LA PAZ" .
+
+
+###  http://example.com/gtfs#par_4_68
+ex:par_4_68 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.45583 ;
+            ex:has_longitude -3.65618 ;
+            rdfs:label "ARTURO SORIA" .
+
+
+###  http://example.com/gtfs#par_4_69
+ex:par_4_69 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.45945 ;
+            ex:has_longitude -3.64582 ;
+            rdfs:label "ESPERANZA" .
+
+
+###  http://example.com/gtfs#par_4_6_to_par_4_121
+ex:par_4_6_to_par_4_121 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_6 ;
+                        ex:has_transfer_to ex:par_4_121 .
+
+
+###  http://example.com/gtfs#par_4_6_to_par_4_42
+ex:par_4_6_to_par_4_42 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_6 ;
+                       ex:has_transfer_to ex:par_4_42 .
+
+
+###  http://example.com/gtfs#par_4_7
+ex:par_4_7 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.44198 ;
+           ex:has_longitude -3.70133 ;
+           rdfs:label "RIOS ROSAS" .
+
+
+###  http://example.com/gtfs#par_4_70
+ex:par_4_70 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.46381 ;
+            ex:has_longitude -3.6356 ;
+            rdfs:label "CANILLAS" .
+
+
+###  http://example.com/gtfs#par_4_71
+ex:par_4_71 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.46943 ;
+            ex:has_longitude -3.63832 ;
+            rdfs:label "MAR DE CRISTAL" .
+
+
+###  http://example.com/gtfs#par_4_71_to_par_4_157
+ex:par_4_71_to_par_4_157 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_71 ;
+                         ex:has_transfer_to ex:par_4_157 .
+
+
+###  http://example.com/gtfs#par_4_72
+ex:par_4_72 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.47447 ;
+            ex:has_longitude -3.63958 ;
+            rdfs:label "SAN LORENZO" .
+
+
+###  http://example.com/gtfs#par_4_73
+ex:par_4_73 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__4___> ;
+            ex:has_latitude 40.47711 ;
+            ex:has_longitude -3.64524 ;
+            rdfs:label "PARQUE DE SANTA MARIA" .
+
+
+###  http://example.com/gtfs#par_4_74
+ex:par_4_74 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.44942 ;
+            ex:has_longitude -3.60816 ;
+            rdfs:label "CANILLEJAS" .
+
+
+###  http://example.com/gtfs#par_4_75
+ex:par_4_75 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.44374 ;
+            ex:has_longitude -3.61699 ;
+            rdfs:label "TORRE ARIAS" .
+
+
+###  http://example.com/gtfs#par_4_76
+ex:par_4_76 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.44085 ;
+            ex:has_longitude -3.62684 ;
+            rdfs:label "SUANZES" .
+
+
+###  http://example.com/gtfs#par_4_77
+ex:par_4_77 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43805 ;
+            ex:has_longitude -3.63816 ;
+            rdfs:label "CIUDAD LINEAL" .
+
+
+###  http://example.com/gtfs#par_4_77_to_par_4_137
+ex:par_4_77_to_par_4_137 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_77 ;
+                         ex:has_transfer_to ex:par_4_137 .
+
+
+###  http://example.com/gtfs#par_4_78
+ex:par_4_78 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43569 ;
+            ex:has_longitude -3.64282 ;
+            rdfs:label "PUEBLO NUEVO" .
+
+
+###  http://example.com/gtfs#par_4_78_to_par_4_137
+ex:par_4_78_to_par_4_137 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_78 ;
+                         ex:has_transfer_to ex:par_4_137 .
+
+
+###  http://example.com/gtfs#par_4_79
+ex:par_4_79 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43358 ;
+            ex:has_longitude -3.64736 ;
+            rdfs:label "QUINTANA" .
+
+
+###  http://example.com/gtfs#par_4_79_to_par_4_137
+ex:par_4_79_to_par_4_137 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_79 ;
+                         ex:has_transfer_to ex:par_4_137 .
+
+
+###  http://example.com/gtfs#par_4_7_to_par_4_143
+ex:par_4_7_to_par_4_143 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_7 ;
+                        ex:has_transfer_to ex:par_4_143 .
+
+
+###  http://example.com/gtfs#par_4_7_to_par_4_144
+ex:par_4_7_to_par_4_144 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_7 ;
+                        ex:has_transfer_to ex:par_4_144 .
+
+
+###  http://example.com/gtfs#par_4_7_to_par_4_41
+ex:par_4_7_to_par_4_41 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_7 ;
+                       ex:has_transfer_to ex:par_4_41 .
+
+
+###  http://example.com/gtfs#par_4_8
+ex:par_4_8 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.43492 ;
+           ex:has_longitude -3.69898 ;
+           rdfs:label "IGLESIA" .
+
+
+###  http://example.com/gtfs#par_4_80
+ex:par_4_80 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43189 ;
+            ex:has_longitude -3.65757 ;
+            rdfs:label "EL CARMEN" .
+
+
+###  http://example.com/gtfs#par_4_81
+ex:par_4_81 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43088 ;
+            ex:has_longitude -3.66361 ;
+            rdfs:label "VENTAS" .
+
+
+###  http://example.com/gtfs#par_4_81_to_par_4_28
+ex:par_4_81_to_par_4_28 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_81 ;
+                        ex:has_transfer_to ex:par_4_28 .
+
+
+###  http://example.com/gtfs#par_4_82
+ex:par_4_82 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43235 ;
+            ex:has_longitude -3.67426 ;
+            rdfs:label "DIEGO DE LEON" .
+
+
+###  http://example.com/gtfs#par_4_82_to_par_4_117
+ex:par_4_82_to_par_4_117 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_82 ;
+                         ex:has_transfer_to ex:par_4_117 .
+
+
+###  http://example.com/gtfs#par_4_82_to_par_4_171
+ex:par_4_82_to_par_4_171 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_82 ;
+                         ex:has_transfer_to ex:par_4_171 .
+
+
+###  http://example.com/gtfs#par_4_82_to_par_4_62
+ex:par_4_82_to_par_4_62 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_82 ;
+                        ex:has_transfer_to ex:par_4_62 .
+
+
+###  http://example.com/gtfs#par_4_82_to_par_4_63
+ex:par_4_82_to_par_4_63 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_82 ;
+                        ex:has_transfer_to ex:par_4_63 .
+
+
+###  http://example.com/gtfs#par_4_83
+ex:par_4_83 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43278 ;
+            ex:has_longitude -3.68258 ;
+            rdfs:label "NUÑEZ DE BALBOA" .
+
+
+###  http://example.com/gtfs#par_4_83_to_par_4_171
+ex:par_4_83_to_par_4_171 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_83 ;
+                         ex:has_transfer_to ex:par_4_171 .
+
+
+###  http://example.com/gtfs#par_4_84
+ex:par_4_84 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.43316 ;
+            ex:has_longitude -3.68954 ;
+            rdfs:label "RUBEN DARIO" .
+
+
+###  http://example.com/gtfs#par_4_85
+ex:par_4_85 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.42828 ;
+            ex:has_longitude -3.69502 ;
+            rdfs:label "ALONSO MARTINEZ" .
+
+
+###  http://example.com/gtfs#par_4_85_to_par_4_195
+ex:par_4_85_to_par_4_195 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_85 ;
+                         ex:has_transfer_to ex:par_4_195 .
+
+
+###  http://example.com/gtfs#par_4_85_to_par_4_57
+ex:par_4_85_to_par_4_57 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_85 ;
+                        ex:has_transfer_to ex:par_4_57 .
+
+
+###  http://example.com/gtfs#par_4_85_to_par_4_58
+ex:par_4_85_to_par_4_58 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_85 ;
+                        ex:has_transfer_to ex:par_4_58 .
+
+
+###  http://example.com/gtfs#par_4_86
+ex:par_4_86 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.42293 ;
+            ex:has_longitude -3.69762 ;
+            rdfs:label "CHUECA" .
+
+
+###  http://example.com/gtfs#par_4_86_to_par_4_10
+ex:par_4_86_to_par_4_10 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_86 ;
+                        ex:has_transfer_to ex:par_4_10 .
+
+
+###  http://example.com/gtfs#par_4_86_to_par_4_11
+ex:par_4_86_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_86 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_86_to_par_4_33
+ex:par_4_86_to_par_4_33 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_86 ;
+                        ex:has_transfer_to ex:par_4_33 .
+
+
+###  http://example.com/gtfs#par_4_87
+ex:par_4_87 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.41999 ;
+            ex:has_longitude -3.7018 ;
+            rdfs:label "GRAN VIA" .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_11
+ex:par_4_87_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_12
+ex:par_4_87_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_34
+ex:par_4_87_to_par_4_34 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_34 .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_35
+ex:par_4_87_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_48
+ex:par_4_87_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_87_to_par_4_49
+ex:par_4_87_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_87 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_88
+ex:par_4_88 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.42008 ;
+            ex:has_longitude -3.70566 ;
+            rdfs:label "CALLAO" .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_11
+ex:par_4_88_to_par_4_11 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_11 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_12
+ex:par_4_88_to_par_4_12 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_12 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_237
+ex:par_4_88_to_par_4_237 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_88 ;
+                         ex:has_transfer_to ex:par_4_237 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_35
+ex:par_4_88_to_par_4_35 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_35 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_36
+ex:par_4_88_to_par_4_36 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_36 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_37
+ex:par_4_88_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_48
+ex:par_4_88_to_par_4_48 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_48 .
+
+
+###  http://example.com/gtfs#par_4_88_to_par_4_49
+ex:par_4_88_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_88 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_89
+ex:par_4_89 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.41809 ;
+            ex:has_longitude -3.70935 ;
+            rdfs:label "OPERA" .
+
+
+###  http://example.com/gtfs#par_4_89_to_par_4_237
+ex:par_4_89_to_par_4_237 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_89 ;
+                         ex:has_transfer_to ex:par_4_237 .
+
+
+###  http://example.com/gtfs#par_4_89_to_par_4_36
+ex:par_4_89_to_par_4_36 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_89 ;
+                        ex:has_transfer_to ex:par_4_36 .
+
+
+###  http://example.com/gtfs#par_4_89_to_par_4_37
+ex:par_4_89_to_par_4_37 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_89 ;
+                        ex:has_transfer_to ex:par_4_37 .
+
+
+###  http://example.com/gtfs#par_4_89_to_par_4_49
+ex:par_4_89_to_par_4_49 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_89 ;
+                        ex:has_transfer_to ex:par_4_49 .
+
+
+###  http://example.com/gtfs#par_4_8_to_par_4_143
+ex:par_4_8_to_par_4_143 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_8 ;
+                        ex:has_transfer_to ex:par_4_143 .
+
+
+###  http://example.com/gtfs#par_4_8_to_par_4_40
+ex:par_4_8_to_par_4_40 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_8 ;
+                       ex:has_transfer_to ex:par_4_40 .
+
+
+###  http://example.com/gtfs#par_4_9
+ex:par_4_9 rdf:type owl:NamedIndividual ,
+                    ex:Stop ;
+           ex:has_route <http://example.com/gtfs#4__1___> ;
+           ex:has_latitude 40.42906 ;
+           ex:has_longitude -3.70218 ;
+           rdfs:label "BILBAO" .
+
+
+###  http://example.com/gtfs#par_4_90
+ex:par_4_90 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.41128 ;
+            ex:has_longitude -3.70816 ;
+            rdfs:label "LA LATINA" .
+
+
+###  http://example.com/gtfs#par_4_90_to_par_4_13
+ex:par_4_90_to_par_4_13 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_90 ;
+                        ex:has_transfer_to ex:par_4_13 .
+
+
+###  http://example.com/gtfs#par_4_91
+ex:par_4_91 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.40704 ;
+            ex:has_longitude -3.71105 ;
+            rdfs:label "PUERTA DE TOLEDO" .
+
+
+###  http://example.com/gtfs#par_4_92
+ex:par_4_92 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.40387 ;
+            ex:has_longitude -3.70664 ;
+            rdfs:label "ACACIAS" .
+
+
+###  http://example.com/gtfs#par_4_92_to_par_4_46
+ex:par_4_92_to_par_4_46 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_92 ;
+                        ex:has_transfer_to ex:par_4_46 .
+
+
+###  http://example.com/gtfs#par_4_93
+ex:par_4_93 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.4026 ;
+            ex:has_longitude -3.71138 ;
+            rdfs:label "PIRAMIDES" .
+
+
+###  http://example.com/gtfs#par_4_94
+ex:par_4_94 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.39736 ;
+            ex:has_longitude -3.71596 ;
+            rdfs:label "MARQUES DE VADILLO" .
+
+
+###  http://example.com/gtfs#par_4_95
+ex:par_4_95 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.39335 ;
+            ex:has_longitude -3.7236 ;
+            rdfs:label "URGEL" .
+
+
+###  http://example.com/gtfs#par_4_96
+ex:par_4_96 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.38846 ;
+            ex:has_longitude -3.73132 ;
+            rdfs:label "OPORTO" .
+
+
+###  http://example.com/gtfs#par_4_96_to_par_4_106
+ex:par_4_96_to_par_4_106 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_96 ;
+                         ex:has_transfer_to ex:par_4_106 .
+
+
+###  http://example.com/gtfs#par_4_97
+ex:par_4_97 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.38885 ;
+            ex:has_longitude -3.73982 ;
+            rdfs:label "VISTA ALEGRE" .
+
+
+###  http://example.com/gtfs#par_4_97_to_par_4_105
+ex:par_4_97_to_par_4_105 rdf:type owl:NamedIndividual ,
+                                  ex:Transfer ;
+                         ex:has_transfer_from ex:par_4_97 ;
+                         ex:has_transfer_to ex:par_4_105 .
+
+
+###  http://example.com/gtfs#par_4_98
+ex:par_4_98 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.38783 ;
+            ex:has_longitude -3.74487 ;
+            rdfs:label "CARABANCHEL" .
+
+
+###  http://example.com/gtfs#par_4_99
+ex:par_4_99 rdf:type owl:NamedIndividual ,
+                     ex:Stop ;
+            ex:has_route <http://example.com/gtfs#4__5___> ;
+            ex:has_latitude 40.38439 ;
+            ex:has_longitude -3.75121 ;
+            rdfs:label "EUGENIA DE MONTIJO" .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_195
+ex:par_4_9_to_par_4_195 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_9 ;
+                        ex:has_transfer_to ex:par_4_195 .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_196
+ex:par_4_9_to_par_4_196 rdf:type owl:NamedIndividual ,
+                                 ex:Transfer ;
+                        ex:has_transfer_from ex:par_4_9 ;
+                        ex:has_transfer_to ex:par_4_196 .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_39
+ex:par_4_9_to_par_4_39 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_9 ;
+                       ex:has_transfer_to ex:par_4_39 .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_40
+ex:par_4_9_to_par_4_40 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_9 ;
+                       ex:has_transfer_to ex:par_4_40 .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_55
+ex:par_4_9_to_par_4_55 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_9 ;
+                       ex:has_transfer_to ex:par_4_55 .
+
+
+###  http://example.com/gtfs#par_4_9_to_par_4_56
+ex:par_4_9_to_par_4_56 rdf:type owl:NamedIndividual ,
+                                ex:Transfer ;
+                       ex:has_transfer_from ex:par_4_9 ;
+                       ex:has_transfer_to ex:par_4_56 .
+
+
+###  http://example.com/gtfs#4__10___
+<http://example.com/gtfs#4__10___> rdf:type owl:NamedIndividual ,
+                                            ex:Route ;
+                                   ex:has_mode ex:mode_1 ;
+                                   rdfs:comment "Hospital Infanta Sofía-Puerta del Sur" ;
+                                   rdfs:label "10" .
+
+
+###  http://example.com/gtfs#4__11___
+<http://example.com/gtfs#4__11___> rdf:type owl:NamedIndividual ,
+                                            ex:Route ;
+                                   ex:has_mode ex:mode_1 ;
+                                   rdfs:comment "Plaza Elíptica-La Fortuna" ;
+                                   rdfs:label "11" .
+
+
+###  http://example.com/gtfs#4__12___
+<http://example.com/gtfs#4__12___> rdf:type owl:NamedIndividual ,
+                                            ex:Route ;
+                                   ex:has_mode ex:mode_1 ;
+                                   rdfs:comment "MetroSur" ;
+                                   rdfs:label "12" .
+
+
+###  http://example.com/gtfs#4__1___
+<http://example.com/gtfs#4__1___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Pinar de Chamartín-Valdecarros" ;
+                                  rdfs:label "1" .
+
+
+###  http://example.com/gtfs#4__2___
+<http://example.com/gtfs#4__2___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Las Rosas-Cuatro Caminos" ;
+                                  rdfs:label "2" .
+
+
+###  http://example.com/gtfs#4__3___
+<http://example.com/gtfs#4__3___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Villaverde Alto-Moncloa" ;
+                                  rdfs:label "3" .
+
+
+###  http://example.com/gtfs#4__4___
+<http://example.com/gtfs#4__4___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Argüelles-Pinar de Chamartín" ;
+                                  rdfs:label "4" .
+
+
+###  http://example.com/gtfs#4__5___
+<http://example.com/gtfs#4__5___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Alameda de Osuna-Casa de Campo" ;
+                                  rdfs:label "5" .
+
+
+###  http://example.com/gtfs#4__6___
+<http://example.com/gtfs#4__6___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Circular" ;
+                                  rdfs:label "6" .
+
+
+###  http://example.com/gtfs#4__7___
+<http://example.com/gtfs#4__7___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Hospital del Henares-Pitis" ;
+                                  rdfs:label "7" .
+
+
+###  http://example.com/gtfs#4__8___
+<http://example.com/gtfs#4__8___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Nuevos Ministerios - Aeropuerto T4" ;
+                                  rdfs:label "8" .
+
+
+###  http://example.com/gtfs#4__9___
+<http://example.com/gtfs#4__9___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Paco de Lucía-Arganda del Rey" ;
+                                  rdfs:label "9" .
+
+
+###  http://example.com/gtfs#4__R___
+<http://example.com/gtfs#4__R___> rdf:type owl:NamedIndividual ,
+                                           ex:Route ;
+                                  ex:has_mode ex:mode_1 ;
+                                  rdfs:comment "Opera-Príncipe Pío" ;
+                                  rdfs:label "R" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

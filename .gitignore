@@ -1,0 +1,4 @@
+# ignore raw data downloaded from crtm.es and renfe.es
+data/raw/
+src/__pycache__/
+*~

@@ -9,13 +9,13 @@ To get started with this project, follow the steps below:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://eimtgit.uoc.edu/prog_datasci_2/activities/activity_sol_4.git
+git clone https://github.com/jaufor/info_transport.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd activity_sol_4
+cd info_transport
 ```
 
 3. Install the required dependencies. We recommend creating a virtual environment before installing the dependencies:
@@ -58,33 +58,6 @@ The repository has the following structure:
 - `requirements.txt`: A text file specifying the Python dependencies required for the project.
 - `README.md`: This file, providing an overview of the repository and instructions for usage.
 - `LICENSE.md`: A markdown file specifying the licence of the code in this repository.
-
-## Test
-#https://coverage.readthedocs.io/en/7.6.4/
-To execute the test and see the coverage of this you need to run the following commands, from the root folder:
-
-1. To create the coverage of the test:
-    ```bash
-    coverage run --source=. -m unittest discover -s test/
-    ```
-2. To see the coverage report:
-    ```bash
-    coverage report
-    ```
-
-Output:
-```
-Name                           Stmts   Miss  Cover
---------------------------------------------------
-src\data_filtering.py             20      1    95%
-src\data_processing.py            16      0   100%
-src\plots.py                      39      0   100%
-test\test_data_filtering.py       20      1    95%
-test\test_data_processing.py      24      1    96%
-test\test_plot.py                 16      1    94%
---------------------------------------------------
-TOTAL                            135      4    97%
-```
 
 ## License
 
