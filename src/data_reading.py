@@ -65,6 +65,5 @@ def add_transfers(g, filename):
             g.add((transfer, RDF.type, URIRef(EX.Transfer)))
             g.add((transfer, EX.has_transfer_from, URIRef(EX[row['transfer_from']])))
             g.add((transfer, EX.has_transfer_to, URIRef(EX[row['transfer_to']])))
-            g.add((transfer, EX.has_distance, Literal(row['distance'], datatype=XSD.decimal)))
     return g
 

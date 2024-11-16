@@ -3,6 +3,7 @@ from rdflib.namespace import Namespace, NamespaceManager, RDF, RDFS, XSD
 from data_reading import add_routes, add_stops, add_transfers
 from find_coordinates import get_coordinates
 from find_stops import find_nearest_stops
+from find_routes import find_routes, find_best_routes
 
 # create graph
 EX = Namespace('http://example.com/gtfs#')
@@ -43,5 +44,10 @@ lat, lon = get_coordinates(query)
 # find stops near destination
 destination_stops = find_nearest_stops(lat, lon)
 
-print("Stops near origin:\n\t{}".format(origin_stops))
-print("Stops near destination:\n\t{}".format(destination_stops))
+# find best paths between origin and destination
+paths = find_routes(g, origin_stops, destination_stops)
+best_paths = find_best_routes(g, paths)
+print (best_paths)
+
+# close the graph
+g.close()
