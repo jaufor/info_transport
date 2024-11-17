@@ -38,7 +38,7 @@ def read_accesses(input_path):
     accesses.rename(columns={'stop_id': 'access_id', 'stop_lat': 'access_lat', 'stop_lon': 'access_lon'}, inplace=True)
     return accesses
 
-def read_stops(input_path, routes: pd.Dataframe):
+def read_stops(input_path, routes: pd.DataFrame):
     """
     Get the stops from one GTFS data source.
 
