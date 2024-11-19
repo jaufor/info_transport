@@ -31,14 +31,14 @@ def read_accesses(input_path):
     Returns:
     Pandas dataframe with columns: 'access_id', 'access_lat', 'access_lon' and 'parent_station'.
     """
-    accesses = pd.read_csv(input_path + "stops.txt")
+    accesses = pd.read_csv(input_path + "stops.txt", dtype = {'stop_id': str})
     accesses = accesses[accesses.location_type == 2]
     columns = ['stop_id', 'stop_lat', 'stop_lon', 'parent_station']
     accesses = pd.DataFrame(accesses, columns=columns)
     accesses.rename(columns={'stop_id': 'access_id', 'stop_lat': 'access_lat', 'stop_lon': 'access_lon'}, inplace=True)
     return accesses
 
-def read_stops(input_path, routes: pd.DataFrame):
+def read_stops(input_path, routes):
     """
     Get the stops from one GTFS data source.
 
@@ -53,25 +53,26 @@ def read_stops(input_path, routes: pd.DataFrame):
     Pandas dataframe with columns: 'stop_id' and 'stop_name', 'stop_lat', 'stop_lon', 'parent_station' and 'route_id'.
     """
     # stop_times
-    stop_times = pd.read_csv(input_path + "stop_times.txt")
+    stop_times = pd.read_csv(input_path + "stop_times.txt", dtype = {'stop_id': str})
     columns = ['trip_id', 'stop_id']
-    stop_times = pd.DataFrame(stop_times, columns=columns).drop_duplicates(subset=['stop_id'])
+    stop_times = pd.DataFrame(stop_times, columns=columns).drop_duplicates()
     # trips
     trips = pd.read_csv(input_path + "trips.txt")
     columns = ['route_id', 'trip_id']
-    trips = pd.DataFrame(trips, columns=columns)
+    trips = pd.DataFrame(trips, columns=columns).drop_duplicates(subset=['route_id'])
     trips = trips.merge(routes)
+    trips = trips.merge(stop_times)
     # stops
-    stops = pd.read_csv(input_path + "stops.txt")
+    stops = pd.read_csv(input_path + "stops.txt", dtype = {'stop_id': str})
     stops = stops[stops.location_type == 0]
     columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'parent_station']
     stops = pd.DataFrame(stops, columns=columns)
-    # if there is no parent_station, create it based on stop_id.
-    stops['parent_station'] = np.where(stops['parent_station'].isnull(), stops['stop_id'].str.replace('par', 'est'), stops['parent_station'])
-    stops = stops.merge(stop_times)
+    # For subway and light subway, if there is no parent_station, create it based on stop_id.
+    if input_path in ['data/raw/crtm/M4/', 'data/raw/crtm/M10/']:
+        stops['parent_station'] = np.where(stops['parent_station'].isnull(), stops['stop_id'].str.replace('par', 'est'), stops['parent_station'])
     stops = stops.merge(trips)
     columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'parent_station', 'route_id']
-    stops = pd.DataFrame(stops, columns=columns)
+    stops = pd.DataFrame(stops, columns=columns).drop_duplicates()
     return stops
 
 def calculate_distance(lat1, lon1, lat2, lon2):
@@ -97,7 +98,8 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     array = np.where(array <= 1, array, 1)                           
     return 6371.01 * np.arccos(array)
 
-def same_line(stops: pd.DataFrame, stop1, stop2):
+# aquesta funcio no cal
+def same_line(stops, stop1, stop2):
     """
     find out if two stops belong to the same line
 
@@ -109,11 +111,14 @@ def same_line(stops: pd.DataFrame, stop1, stop2):
     Returns:
     Boolean: true if both stops belong to the same line, false otherwise
     """
-    route_id1 = stops.loc[stops['stop_id'] == stop1, 'route_id'].iloc[0]
-    route_id2 = stops.loc[stops['stop_id'] == stop2, 'route_id'].iloc[0]
-    return route_id1 == route_id2
+    #route_id1 = stops.loc[stops['stop_id'] == stop1, 'route_id'].iloc[0]
+    #route_id2 = stops.loc[stops['stop_id'] == stop2, 'route_id'].iloc[0]
+    #return route_id1 == route_id2
+    route_id1 = stops.loc[stops['stop_id'] == stop1, 'route_id']
+    route_id2 = stops.loc[stops['stop_id'] == stop2, 'route_id']
+    return route_id1.equals(other=route_id2)
 
-def find_transfers(stops: pd.DataFrame):
+def find_transfers(stops):
     """
     find the stops that are close to each other, thus one can walk from one to the other.
 
@@ -142,8 +147,8 @@ def find_transfers(stops: pd.DataFrame):
         .rename(columns={0: 'distance', 'level_0': 'transfer_from', 'level_1': 'transfer_to'})
        )
     # discard transfers between stops of the same line
-    transfers['same_line'] = transfers.apply(lambda x: same_line(stops, x['transfer_from'], x['transfer_to']), axis=1)
-    transfers = transfers.drop(transfers[transfers['same_line']].index)
+    #transfers['same_line'] = transfers.apply(lambda x: same_line(stops, x['transfer_from'], x['transfer_to']), axis=1)
+    #transfers = transfers.drop(transfers[transfers['same_line']].index)
     # generate a transfer_id
     transfers['transfer_id'] = transfers['transfer_from'].astype(str) + '_to_' + transfers['transfer_to'].astype(str)
     transfers = transfers[['transfer_id', 'transfer_from', 'transfer_to']]
@@ -165,44 +170,46 @@ stops = pd.DataFrame(stops, columns=columns)
 stops.to_csv('data/processed/stops.csv', index=False)
 
 # Process light subway data source
-#routes = read_routes('data/raw/crtm/M10/')
-#routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
-#accesses = read_accesses('data/raw/crtm/M10/')
-#accesses.to_csv('data/processed/accesses.csv', index=False)
-#stops = read_stops('data/raw/crtm/M10/', routes)
+routes = read_routes('data/raw/crtm/M10/')
+routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
+accesses = read_accesses('data/raw/crtm/M10/')
+accesses.to_csv('data/processed/accesses.csv', index=False)
+stops = read_stops('data/raw/crtm/M10/', routes)
 # replace geographic coordinates of stops for those of the accesses to the cooresponding parent_station
-#stops = stops.merge(accesses, on='parent_station', how="left")
-#stops['stop_lat'] = stops['access_lat']
-#stops['stop_lon'] = stops['access_lon']
-#columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
-#stops = pd.DataFrame(stops, columns=columns)
-#stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
+# if there isn't any access, then leave geographic coordinates as they are
+stops = stops.merge(accesses, on='parent_station', how="left")
+stops['stop_lat'] = np.where(np.isnan(stops['access_lat']), stops['stop_lat'], stops['access_lat'])
+stops['stop_lon'] = np.where(np.isnan(stops['access_lon']), stops['stop_lon'], stops['access_lon'])
+columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
+stops = pd.DataFrame(stops, columns=columns)
+stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
 
 # Process rail data source
-#routes = read_routes('data/raw/renfe/M5/')
-#routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
-#stops = read_stops('data/raw/renfe/M5/', routes)
-#columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
-#stops = pd.DataFrame(stops, columns=columns)
-#stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
+routes = read_routes('data/raw/renfe/M5/')
+routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
+stops = read_stops('data/raw/renfe/M5/', routes)
+columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
+stops = pd.DataFrame(stops, columns=columns)
+stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
 
-# Process intercity bus data source
-#routes = read_routes('data/raw/crtm/M89/')
-#routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
-#stops = read_stops('data/raw/crtm/M89/', routes)
-#columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
-#stops = pd.DataFrame(stops, columns=columns)
-#stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
 
 # Process city bus data source
-#routes = read_routes('data/raw/crtm/M6/')
-#routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
-#stops = read_stops('data/raw/crtm/M6/', routes)
-#columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
-#stops = pd.DataFrame(stops, columns=columns)
-#stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
+routes = read_routes('data/raw/crtm/M6/')
+routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
+stops = read_stops('data/raw/crtm/M6/', routes)
+columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
+stops = pd.DataFrame(stops, columns=columns)
+stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
+
+# Process intercity bus data source
+routes = read_routes('data/raw/crtm/M89/')
+routes.to_csv('data/processed/routes.csv', index=False, header=False, mode='a')
+stops = read_stops('data/raw/crtm/M89/', routes)
+columns = ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'route_id']
+stops = pd.DataFrame(stops, columns=columns)
+stops.to_csv('data/processed/stops.csv', index=False, header=False, mode='a')
 
 # Find and save transfers
-stops = pd.read_csv('data/processed/stops.csv')
+stops = pd.read_csv('data/processed/stops.csv', dtype = {'stop_id': str, 'stop_name': str, 'route_id': str})
 transfers = find_transfers(stops)
 transfers.to_csv('data/processed/transfers.csv', index=False)

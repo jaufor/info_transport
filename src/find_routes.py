@@ -110,39 +110,52 @@ def find_path_distance(g, path):
 
 def find_best_routes(g, paths):
     """
-    Show on screen the three shortest paths to go from source to destination.
+    Show on screen the shortest paths to go from source to destination.
 
     Orders the list of all possible paths returned by the function find_routes according to the distance
-    calculated by the function find_path_distance and shows the shortests paths on screen.
-    If two paths contain the same trip (same line and same stops connected by it),
-    only the shortest one is considered. 
+    calculated by the function find_path_distance. 
+    If the distance of a path is greater than the distance of the shortest path plus 2 kilometer,
+    don't consider the path. If two paths use the same mode for the origin route and the same mode for the destination route,
+    only the shortest one is considered.
     
     Args:
     RDF Graph: graph that represents the transport network
-    List: the list of all possible paths to go from origin to destination doing one transfer at most
+    List: the list of all possible paths.
     
     Returns:
     Void
     """
-    trips = set()
-    paths = sorted(paths, key=lambda path: find_path_distance(g, path))
-    for path in paths:
+    origin_route_modes = set()
+    destination_route_modes = set()
+    paths = sorted(paths, key=lambda path: find_path_distance(g, path))    
+    shortest_path_distance = find_path_distance(g, paths[0])
+    origin, origin_route, mid_stop_1, mid_stop_2, destination_route, destination = paths[0]
+    origin_route_mode = get_route_mode(g, origin_route)
+    origin_route_mode = get_label(g, origin_route_mode)
+    origin_route = get_label(g, origin_route)
+    mid_stop_1 = get_label(g, mid_stop_1)
+    destination_route_mode = get_route_mode(g, destination_route)
+    destination_route_mode = get_label(g, destination_route_mode)
+    destination_route = get_label(g, destination_route)
+    origin_route_modes.add(origin_route_mode)
+    destination_route_modes.add(destination_route_mode)
+    print("{}#{} ({}) >> {}#{}".format(origin_route_mode, origin_route, mid_stop_1, destination_route_mode, destination_route))
+    for path in paths[1:]:
+        path_distance = find_path_distance(g, path)
+        # don't consider the path if its distance is greater than shortest_path_distance + 2 km
+        if (path_distance > shortest_path_distance + 2):
+            continue
         origin, origin_route, mid_stop_1, mid_stop_2, destination_route, destination = path
-        origin = get_label(g, origin)
         origin_route_mode = get_route_mode(g, origin_route)
         origin_route_mode = get_label(g, origin_route_mode)
         origin_route = get_label(g, origin_route)
         mid_stop_1 = get_label(g, mid_stop_1)
-        mid_stop_2 = get_label(g, mid_stop_2)
         destination_route_mode = get_route_mode(g, destination_route)
         destination_route_mode = get_label(g, destination_route_mode)
         destination_route = get_label(g, destination_route)
-        destination = get_label(g, destination)
-        trip_1 = "{} - {}_L{} - {}".format(origin, origin_route_mode, origin_route, mid_stop_1)
-        trip_2 = "{} - {}_L{} - {}".format(mid_stop_2, destination_route_mode, destination_route, destination)
-        # if any of the two trips has been already seen, we discard this path
-        if (trip_1 in trips) or (trip_2 in trips):
+        # if origin_route_mode and destination_route_mode have been already seen, we discard this path
+        if (origin_route_mode in origin_route_modes) and (destination_route_mode in destination_route_modes):
             continue
-        trips.add(trip_1)
-        trips.add(trip_2)
-        print("{} - {}".format(trip_1, trip_2))
+        origin_route_modes.add(origin_route_mode)
+        destination_route_modes.add(destination_route_mode)
+        print("{}#{} ({}) >> {}#{}".format(origin_route_mode, origin_route, mid_stop_1, destination_route_mode, destination_route))

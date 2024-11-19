@@ -17,7 +17,8 @@ def get_coordinates(query):
     Tuple: latitude (Float) and longitude (Float) coordinates
     """
     location = geolocator.geocode(query, viewbox=[Point(40.55, -4), Point(40.25, -3.3)], bounded=True)
-    print(location.address)
+    if location:
+        print(location.address)
     return (location.latitude, location.longitude)
 
 

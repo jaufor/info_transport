@@ -24,9 +24,13 @@ g = add_transfers(g, 'data/processed/transfers.csv')
 print('Which is the origin address?')
 street = input('street name: ')
 housenumber = input('house number: ')
-street = housenumber + ' ' + street
+if housenumber:
+    street = housenumber + ' ' + street
 city = input('city name: ')
-query = {'street': street, 'city': city}
+if city:
+    query = {'street': street, 'city': city}
+else:
+    query = street
 # get geographic coordinates of origin address
 lat, lon = get_coordinates(query)
 # find stops near origin
@@ -36,9 +40,13 @@ origin_stops = find_nearest_stops(lat, lon)
 print('Which is the destination address?')
 street = input('street name: ')
 housenumber = input('house number: ')
-street = housenumber + ' ' + street
+if housenumber:
+    street = housenumber + ' ' + street
 city = input('city name: ')
-query = {'street': street, 'city': city}
+if city:
+    query = {'street': street, 'city': city}
+else:
+    query = street
 # get geographic coordinates of destination address
 lat, lon = get_coordinates(query)
 # find stops near destination

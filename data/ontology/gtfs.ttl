@@ -89,10 +89,28 @@ ex:Transfer rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://example.com/gtfs#mode_0
+ex:mode_0 rdf:type owl:NamedIndividual ,
+                   ex:Mode ;
+          rdfs:label "Light subway"@en .
+
+
 ###  http://example.com/gtfs#mode_1
 ex:mode_1 rdf:type owl:NamedIndividual ,
                    ex:Mode ;
           rdfs:label "Subway"@en .
+
+
+###  http://example.com/gtfs#mode_2
+ex:mode_2 rdf:type owl:NamedIndividual ,
+                   ex:Mode ;
+          rdfs:label "Railway"@en .
+
+
+###  http://example.com/gtfs#mode_3
+ex:mode_3 rdf:type owl:NamedIndividual ,
+                   ex:Mode ;
+          rdfs:label "Bus"@en .
 
 
 #################################################################
