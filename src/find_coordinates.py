@@ -1,7 +1,7 @@
 from geopy.geocoders import Nominatim
 from geopy.point import Point
 
-geolocator = Nominatim(user_agent="info_transport")
+geolocator = Nominatim(user_agent='info_transport')
 
 def get_coordinates(query):
     """

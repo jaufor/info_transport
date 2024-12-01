@@ -16,23 +16,16 @@ route_id,route_short_name,route_long_name,route_type
 10__ML2___,ML2,Colonia Jardín - Estación de Aravaca,mode_0
 10__ML3___,ML3,Colonia Jardín - Puerta de Boadilla,mode_0
 10__ML4___,ML4,Tranvía de Parla (Línea Circular),mode_0
-10T0001C1,C1,Principe Pio-Aeropuerto-T4,mode_2
-10T0005C2,C2,Guadalajara-Chamartín- Clara Campoamor,mode_2
-10T0019C2,C2,Alcala de Henares-Principe Pio,mode_2
-10T0007C3,C3,Chamartín- Clara Campoamor-Aranjuez,mode_2
-10T0013C4a,C4a,Alcobendas-S.Sebast. de los Reyes-Parla,mode_2
-10T0015C4b,C4b,Colmenar Viejo-Parla,mode_2
-10T0017C5,C5,Mostoles el Soto-Humanes,mode_2
-10T0051C7,C7,Principe Pio-Chamartín- Clara Campoamor,mode_2
-10T0059C7,C7,Chamartín- Clara Campoamor-Alcala de Henares,mode_2
-10T0073C7,C7,Guadalajara-Pozuelo,mode_2
-10T0021C8,C8,Atocha-Cercedilla,mode_2
-10T0039C8,C8,Principe Pio-,mode_2
-10T0023C8a,C8a,Atocha-El Escorial,mode_2
-10T0025C9,C9,Cercedilla-Cotos,mode_2
-10T0003C10,C10,Villalba-Aeropuerto-T4,mode_2
-10T0063C10,C10,El Escorial-Principe Pio,mode_2
-10T0071C10,C10,Pozuelo-Pitis,mode_2
+5__C1___,C1,Príncipe Pío-Atocha-Recoletos-Chamartín-Aeropuerto T4,mode_2
+5__C2___,C2,Guadalajara-Alcalá de Henares-Atocha-Chamartín,mode_2
+5__C3___,C3,Aranjuez-Atocha-Sol-Chamartín,mode_2
+5__C4_A__,C4A,Parla-Atocha-Sol-Chamartín-Cantoblanco-Alcobendas S.Sebastián de los Reyes,mode_2
+5__C4_B__,C4B,Parla-Atocha-Sol-Chamartín-Cantoblanco-Colmenar Viejo,mode_2
+5__C5___,C5,Móstoles El Soto-Atocha-Fuenlabrada-Humanes,mode_2
+5__C7___,C7,Alcalá de Henares-Atocha-Chamartín-P.Pío,mode_2
+5__C8___,C8,Guadalajara-Alcalá de Henares-Atocha-Chamartín-Villalba-Cercedilla,mode_2
+5__C9___,C9,Cercedilla-Cotos,mode_2
+5__C10___,C10,Villalba-Príncipe Pío-Atocha-Recoletos-Chamartín-Aeropuerto T4,mode_2
 6__1___,1,CRISTO REY-PROSPERIDAD,mode_3
 6__2___,2,MANUEL BECERRA-REINA VICTORIA,mode_3
 6__3___,3,PUERTA TOLEDO-SAN AMARO,mode_3
@@ -211,34 +204,6 @@ route_id,route_short_name,route_long_name,route_type
 6__H___,H,ALUCHE-SOMOSAGUAS,mode_3
 6__H1___,H1,SIERRA GUADALUPE-H.I.LEONOR,mode_3
 6__M1___,M1,SOL/SEVILLA-EMBAJADORES,mode_3
-6_N_1___,N1,CIBELES-SANCHINARRO,mode_3
-6_N_10___,N10,CIBELES-PALOMERAS,mode_3
-6_N_11___,N11,CIBELES-MADRID SUR,mode_3
-6_N_12___,N12,CIBELES-BUTARQUE,mode_3
-6_N_13___,N13,CIBELES-SAN CRISTOBAL,mode_3
-6_N_14___,N14,CIBELES-VILLAVERDE ALTO,mode_3
-6_N_15___,N15,CIBELES-ORCASUR,mode_3
-6_N_16___,N16,CIBELES-LA PESETA,mode_3
-6_N_17___,N17,CIBELES-CARABANCHEL ALTO,mode_3
-6_N_18___,N18,CIBELES-ALUCHE,mode_3
-6_N_19___,N19,CIBELES-SAN IGNACIO,mode_3
-6_N_2___,N2,CIBELES-VALDEBEBAS,mode_3
-6_N_20___,N20,CIBELES-PITIS,mode_3
-6_N_21___,N21,CIBELES-ARROYO FRESNO,mode_3
-6_N_22___,N22,CIBELES-BARRIO DEL PILAR,mode_3
-6_N_23___,N23,CIBELES-MONTECARMELO,mode_3
-6_N_24___,N24,CIBELES-LAS TABLAS,mode_3
-6_N_25___,N25,ALONSO MARTINEZ-VILLA VALLECAS,mode_3
-6_N_26___,N26,ALONSO MARTINEZ-ALUCHE,mode_3
-6_N_27___,N27,CIBELES-AEROPUERTO,mode_3
-6_N_28___,N28,MONCLOA-ARAVACA,mode_3
-6_N_3___,N3,CIBELES-CANILLAS,mode_3
-6_N_4___,N4,CIBELES-BARAJAS,mode_3
-6_N_5___,N5,CIBELES-FIN DE SEMANA,mode_3
-6_N_6___,N6,CIBELES-LAS ROSAS,mode_3
-6_N_7___,N7,CIBELES-VALDERRIVAS,mode_3
-6_N_8___,N8,CIBELES-VALDEBERNARDO,mode_3
-6_N_9___,N9,CIBELES-ENSANCHE VALLECAS,mode_3
 6__SE702___,SE702,PLAZA ELIPTICA-CEMENTERIO SUR,mode_3
 6__SE704___,SE704,PLAZA CASTILLA-CMTº FUENCARRAL,mode_3
 6__SE709___,SE709,FERIA DE MADRID-H. I. ZENDAL,mode_3
@@ -284,10 +249,6 @@ route_id,route_short_name,route_long_name,route_type
 8__725___,725,MADRID (Plaza de Castilla)-MIRAFLORES-BUSTARVIEJO-VALDEMANCO,mode_3
 8__726___,726,MADRID (Plaza de Castilla)-GUADALIX-NAVALAFUENTE,mode_3
 8__727___,727,COLMENAR VIEJO-SAN AGUSTÍN DEL GUADALIX,mode_3
-8_N_101___,N101,MADRID (Plaza de Castilla)-ALCOBENDAS,mode_3
-8_N_102___,N102,MADRID (Plaza de Castilla)-S.S. DE LOS REYES,mode_3
-8_N_103___,N103,MADRID (Plaza de Castilla)-ALGETE,mode_3
-8_N_702___,N702,MADRID (Plaza de Castilla)-COLMENAR VIEJO,mode_3
 8__SE720___,SE720,EST. COLMENAR - SOTO DEL REAL - MANZANARES EL REAL,mode_3
 9__1__045_,1,EST. COMENAR VIEJO - LAS ADELFILLAS,mode_3
 9__2__045_,2,EST. COLMENAR VIEJO - AV. REMEDIOS,mode_3
@@ -305,7 +266,6 @@ route_id,route_short_name,route_long_name,route_type
 8__575___,575,BOADILLA DEL MONTE-BRUNETE,mode_3
 8__591___,591,MADRID (Aluche) - ETSI  Informáticos,mode_3
 8__865___,865,MADRID (Moncloa) - CAMPUS UPM MONTEGANCEDO,mode_3
-8_N_905___,N905,MADRID (Moncloa)-BOADILLA DEL MONTE,mode_3
 9__1__022_,1,PASEO DE MADRID-OLIVAR-PARQUE-LAS LOMAS,mode_3
 9__2__022_,2,FERIAL DE BOADILLA-VALDEPASTORES-LAS LOMAS,mode_3
 9__3__022_,3,FERIAL DE BOADILLA-VALDECABAÑAS-BONANZA,mode_3
@@ -334,10 +294,6 @@ route_id,route_short_name,route_long_name,route_type
 8__498___,498,MÓSTOLES - ARROYOMOLINOS - MORALEJA DE ENMEDIO,mode_3
 8__498_A__,498A,MÓSTOLES (Móstoles - Central) - ARROYOMOLINOS (Parque de Nieve),mode_3
 8__499___,499,MÓSTOLES-ARROYOMOLINOS,mode_3
-8_N_802___,N802,MADRID (Atocha) - LEGANÉS (Vereda de los Estudiantes),mode_3
-8_N_803___,N803,MADRID (Atocha) - FUENLABRADA (Bº Naranjo),mode_3
-8_N_804___,N804,MADRID (Atocha) - FUENLABRADA,mode_3
-8_N_808___,N808,MADRID (Príncipe Pío)-ARROYOMOLINOS,mode_3
 9__1__074_,1,VEREDA DE LOS ESTUDIANTES-LA FORTUNA,mode_3
 9__1_A_015_,1A,CIRCULAR ARROYOMOLINOS,mode_3
 9__1_B_015_,1B,CIRCULAR ARROYOMOLINOS,mode_3
@@ -350,7 +306,6 @@ route_id,route_short_name,route_long_name,route_type
 8__321___,321,ARGANDA (Hospital)-VILLAR DEL OLMO,mode_3
 8__322___,322,ARGANDA DEL REY (Hospital)-AMBITE,mode_3
 8__326___,326,MADRID (Conde de Casal)-MONDEJAR-DRIEBES,mode_3
-8_N_303___,N303,MADRID (Conde de Casal)-ARGANDA DEL REY,mode_3
 9__1__014_,1,RESIDENCIA-LA POVEDA,mode_3
 9__2__014_,2,LA POVEDA-SIETE VIENTOS-HOSPITAL,mode_3
 9__4__014_,4,CIRCULAR ARGANDA,mode_3
@@ -369,9 +324,6 @@ route_id,route_short_name,route_long_name,route_type
 8__414___,414,MADRID (Villaverde Bajo-Cruce)-C.P. MADRID III,mode_3
 8__415___,415,MADRID (Villaverde Bajo-Cruce)-VILLACONEJOS,mode_3
 8__416___,416,VALDEMORO (Hosp.)-S. M. DE LA VEGA-TITULCIA-COLMENAR DE OREJA,mode_3
-8_N_301___,N301,MADRID (Conde de Casal) - RIVAS (Covibar) - RIVAS FUTURA,mode_3
-8_N_302___,N302,MADRID (Conde de Casal) - RIVAS PUEBLO,mode_3
-8_N_403___,N403,MADRID (Atocha)-SAN MARTÍN DE LA VEGA,mode_3
 9__1__123_,1,BARRIO DE LA LUNA - RIVAS PUEBLO,mode_3
 9__1__132_,1,CIRCULAR SAN MARTIN DE LA VEGA,mode_3
 9__1__091_,1,MORATA DE TAJUÑA-ISLA TARAY,mode_3
@@ -380,14 +332,12 @@ route_id,route_short_name,route_long_name,route_type
 8__642___,642,MADRID (Moncloa)-COLMENAR DEL ARROYO,mode_3
 8__643___,643,MADRID (Moncloa)-VILLANUEVA DEL PARDILLO,mode_3
 8__FS1___,FS1,LAS ROZAS (Centros Comerciales) - VALDEMORILLO,mode_3
-8_N_908___,N908,MADRID (Moncloa)-VILLANUEVA DEL PARDILLO-VALDEMORILLO,mode_3
 8__630___,630,VILLALBA (Estación)-GALAPAGAR-COLMENAREJO-VALDEMORILLO,mode_3
 8__631___,631,MADRID (Moncloa)-TORRELODONES (Colonia)-GALAPAGAR-COLMENAREJO,mode_3
 8__632___,632,MADRID (Moncloa)-LA NAVATA-GALAPAGAR-EL GUIJO,mode_3
 8__633___,633,MAJADAHONDA (Hospital)-TORRELODONES (Colonia)-GALAPAGAR-COLMENAREJO,mode_3
 8__634___,634,COLMENAREJO - GALAPAGAR - EST. LA NAVATA,mode_3
 8__635___,635,MADRID (Moncloa)-TORRELODONES (Colonia)-LA NAVATA-GALAPAGAR,mode_3
-8_N_904___,N904,MADRID (Moncloa)-TORRELODONES (Colonia)-GALAPAGAR-COLMENAREJO,mode_3
 9__1__152_,1,FFCC-PUEBLO-ÁREA HOMOGÉNEA SUR,mode_3
 9__2__152_,2,FFCC-AVENIDA DEHESA-LOS ROBLES,mode_3
 9__4__152_,4,FFCC-PUEBLO-LOS PEÑASCALES,mode_3
@@ -398,7 +348,6 @@ route_id,route_short_name,route_long_name,route_type
 8__672_A__,672A,MADRID (Moncloa)-CERCEDA (Directo),mode_3
 8__673___,673,MADRID (Moncloa)-COLLADO VILLALBA (Hospital),mode_3
 8__876___,876,MADRID (Plaza de Castilla)-MORALZARZAL-COLLADO VILLALBA,mode_3
-8_N_603___,N603,MADRID (Moncloa)-MORALZARZAL,mode_3
 9__1__047_,1,FFCC-PQUE. CORUÑA-LOS VALLES-PUEBLO-URBANIZACIONES,mode_3
 9__2__047_,2,FFCC-PQUE. CORUÑA-CENTRO SALUD-LOS NEGRALES-FFCC,mode_3
 9__3__047_,3,FF.CC. - EL GORRONAL - HOSPITAL,mode_3
@@ -418,8 +367,6 @@ route_id,route_short_name,route_long_name,route_type
 8__627___,627,MADRID (Moncloa)-VILLANUEVA DE LA CAÑADA-BRUNETE,mode_3
 8__628___,628,MADRID (Moncloa)-P.EMPRESARIAL-EL CANTIZAL,mode_3
 8__629___,629,MADRID (Moncloa)-LAS ROZAS (Parque Empresarial),mode_3
-8_N_903___,N903,MADRID (Moncloa)-LAS ROZAS-MONTE ROZAS,mode_3
-8_N_907___,N907,MADRID (Moncloa)-VILLANUEVA DE LA CAÑADA-BRUNETE,mode_3
 9__1__127_,1,LAS ROZAS-URBANIZACIÓN MOLINO DE LA HOZ,mode_3
 9__2__127_,2,LAS ROZAS - MONTE ROZAS - EL ENCINAR,mode_3
 8__171___,171,MADRID (Plaza de Castilla)-URB. SANTO DOMINGO,mode_3
@@ -459,11 +406,6 @@ route_id,route_short_name,route_long_name,route_type
 8__534___,534,MADRID (Príncipe Pío)-URB. PARQUE COIMBRA-XANADÚ,mode_3
 8__538___,538,MADRID (Príncipe Pío) - NAVALCARNERO (La Dehesa),mode_3
 8__539___,539,MADRID (Príncipe Pío)-EL ÁLAMO,mode_3
-8_N_501___,N501,MADRID (Príncipe Pío)-ALCORCÓN-MÓSTOLES,mode_3
-8_N_502___,N502,MADRID (Príncipe Pío)-ALCORCÓN,mode_3
-8_N_503___,N503,MADRID (Príncipe Pío)-MÓSTOLES (Villafontana),mode_3
-8_N_504___,N504,MADRID (Príncipe Pío)-VILLAVICIOSA DE ODÓN,mode_3
-8_N_505___,N505,MADRID (Príncipe Pío) - NAVALCARNERO - EL ÁLAMO,mode_3
 9__1__096_,1,LA DEHESA-EL PINAR,mode_3
 9__1__092_,1,LAS CUMBRES-ESTACIÓN FFCC,mode_3
 9__1__007_,1,PUERTA DEL SUR - FUENTE CISNEROS,mode_3
@@ -489,7 +431,6 @@ route_id,route_short_name,route_long_name,route_type
 8__667___,667,MAJADAHONDA (Hospital)-SAN LORENZO DE EL ESCORIAL (Por Galapagar),mode_3
 8__669___,669,SAN LORENZO DE EL ESCORIAL-VILLANUEVA DE LA CAÑADA,mode_3
 8__669_A__,669A,S. L. DE EL ESCORIAL - FRESNEDILLAS - NAVALAGAMELLA,mode_3
-8_N_604___,N604,MADRID (Moncloa)-EL ESCORIAL-SAN LORENZO DE EL ESCORIAL,mode_3
 9__1__131_,1,S. L. DE EL ESCORIAL-FFCC-S. L. DE EL ESCORIAL,mode_3
 9__2__131_,2,EL ESCORIAL-SAN LORENZO DE EL ESCORIAL-HOSPITAL-LA PIZARRA,mode_3
 9__3__054_,3,EL ESCORIAL-LAS ZORRERAS,mode_3
@@ -507,7 +448,6 @@ route_id,route_short_name,route_long_name,route_type
 9__4__058_,4,EL ARROYO-LA FUENTE-LORANCA,mode_3
 9__6__058_,6,FF.CC. FUENLABRADA CENTRAL - CEMENTERIO,mode_3
 9__13__058_,13,BARRIO NARANJO - FF.CC. FUENLABRADA CENTRAL,mode_3
-9_N_5__058_,N5,URBANA NOCTURNA DE FUENLABRADA,mode_3
 8__330___,330,RIVAS-ARGANDA (Hospital)-MORATA,mode_3
 8__331___,331,MADRID (Conde de Casal)-RIVAS (Sta. Mónica)-RIVAS FUTURA,mode_3
 8__332___,332,MADRID (Conde de Casal)-RIVAS PUEBLO,mode_3
@@ -523,9 +463,6 @@ route_id,route_short_name,route_long_name,route_type
 8__414___,414,MADRID (Villaverde Bajo-Cruce)-C.P. MADRID III,mode_3
 8__415___,415,MADRID (Villaverde Bajo-Cruce)-VILLACONEJOS,mode_3
 8__416___,416,VALDEMORO (Hosp.)-S. M. DE LA VEGA-TITULCIA-COLMENAR DE OREJA,mode_3
-8_N_301___,N301,MADRID (Conde de Casal) - RIVAS (Covibar) - RIVAS FUTURA,mode_3
-8_N_302___,N302,MADRID (Conde de Casal) - RIVAS PUEBLO,mode_3
-8_N_403___,N403,MADRID (Atocha)-SAN MARTÍN DE LA VEGA,mode_3
 9__1__123_,1,BARRIO DE LA LUNA - RIVAS PUEBLO,mode_3
 9__1__132_,1,CIRCULAR SAN MARTIN DE LA VEGA,mode_3
 9__1__091_,1,MORATA DE TAJUÑA-ISLA TARAY,mode_3
@@ -575,9 +512,6 @@ route_id,route_short_name,route_long_name,route_type
 8__824___,824,MADRID (Aeropuerto) - TORREJÓN DE ARDOZ - ALCALÁ DE HENARES,mode_3
 8__913___,913,TORRELAGUNA-EL ATAZAR,mode_3
 8__FS2___,FS2,TORRELAGUNA - ALCALÁ DE HENARES,mode_3
-8_N_104___,N104,MADRID (Plaza de Castilla)-SAN AGUSTÍN DE GUADALIX,mode_3
-8_N_202___,N202,MADRID (Av. de América) - TORREJÓN - ALCALÁ - MECO,mode_3
-8_N_204___,N204,MADRID (Canillejas) - PARACUELLOS - DAGANZO,mode_3
 9__1__108_,1,PEDREZUELA-URBANIZACIONES,mode_3
 9__1__104_,1,URB. ALTOS DE JARAMA - MIRAMADRID,mode_3
 9__2__148_,2,FRONTERAS-BARRIO CASTILLO-FRESNO,mode_3
@@ -592,12 +526,10 @@ route_id,route_short_name,route_long_name,route_type
 8__271___,271,ALCALÁ DE HENARES-PEZUELA-PIOZ,mode_3
 8__272___,272,ALCALÁ DE HENARES-VILLALBILLA,mode_3
 8__275___,275,ALCALÁ-LOS SANTOS DE LA HUMOSA-ALCALÁ,mode_3
-8_N_200___,N200,ALCALÁ DE HENARES - VILLALBILLA - ALCALÁ DE HENARES,mode_3
 8__712___,712,MADRID (Plaza de Castilla) - TRES CANTOS (Por Avda. de Encuartes),mode_3
 8__713___,713,MADRID (Plaza de Castilla)-TRES CANTOS (Por Avda. del Parque),mode_3
 8__714___,714,MADRID (Plaza de Castilla)-UNIV.AUTÓNOMA-UNIV.COMILLAS,mode_3
 8__716___,716,MADRID (Plaza de Castilla)-TRES CANTOS (Soto de Viñuelas),mode_3
-8_N_701___,N701,MADRID (Plaza de Castilla)-TRES CANTOS,mode_3
 9__1__903_,1,FFCC-AVENIDA VIÑUELAS-AVENIDA COLMENAR-FFCC,mode_3
 9__2__903_,2,FFCC-AVENIDA COLMENAR-AVENIDA VIÑUELAS-FFCC,mode_3
 9__3__903_,3,SOTO DE VIÑUELAS-TRES CANTOS FFCC-SOTO DE VIÑUELAS,mode_3
@@ -681,15 +613,6 @@ route_id,route_short_name,route_long_name,route_type
 8__696___,696,COLLADO VILLALBA (Hospital)-NAVACERRADA,mode_3
 8__815___,815,MADRID (Estación Chamartín)-POZUELO DE ALARCÓN,mode_3
 8__822___,822,MADRID (Aeropuerto)-COSLADA-SAN FERNANDO DE HENARES,mode_3
-8_N_203___,N203,MADRID (Ciudad Lineal)-COSLADA-S.FERNANDO-VELILLA/LOECHES,mode_3
-8_N_602___,N602,MADRID (Moncloa)-COLLADO VILLALBA-GUADARRAMA,mode_3
-8_N_801___,N801,MADRID (Atocha)-GETAFE (Buenavista - Sector III),mode_3
-8_N_805___,N805,MADRID (Atocha) - GETAFE (Los Molinos),mode_3
-8_N_806___,N806,MADRID (Atocha)-PARLA,mode_3
-8_N_807___,N807,MADRID (Atocha) - GETAFE - HUMANES - GRIÑÓN,mode_3
-8_N_901___,N901,MADRID (Moncloa)-POZUELO-MAJADAHONDA-MADRID,mode_3
-8_N_902___,N902,MADRID (Moncloa)-POZUELO (Prado Somosaguas-Ciudad de la Imagen),mode_3
-8_N_906___,N906,MADRID (Moncloa)-MAJADAHONDA-POZUELO-MADRID,mode_3
 8__SE7___,SE7,HOSPITAL DEL HENARES - SAN FERNANDO,mode_3
 9__1__080_,1,CIRCULAR (Hospital-Estación FFCC),mode_3
 9__1__106_,1,CIRCULAR 1,mode_3
@@ -726,8 +649,6 @@ route_id,route_short_name,route_long_name,route_type
 8__428___,428,GETAFE-VALDEMORO,mode_3
 8__429___,429,MADRID (Legazpi)-ARANJUEZ (PAU de la Montaña),mode_3
 8__430___,430,ARANJUEZ-VILLAREJO DE SALVANES,mode_3
-8_N_401___,N401,MADRID (Atocha)-PINTO-VALDEMORO,mode_3
-8_N_402___,N402,MADRID (Atocha)-CIEMPOZUELOS-ARANJUEZ,mode_3
 9__1__161_,1,CIRCULAR (FFCC-Ambulatorio-FFCC),mode_3
 9__1__040_,1,CIRCULAR DE CIEMPOZUELOS,mode_3
 9__2__161_,2,ESTACIÓN FFCC-EL RESTÓN,mode_3

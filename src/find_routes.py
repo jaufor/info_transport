@@ -88,7 +88,7 @@ def find_path_distance(g, path):
     Calculate the distance between the origin and the destination.
 
     the distance is calculated by adding the distances between each pair of the stops
-    that make up the route and are directly connected.
+    that make up the route and are directly connected. Paths without transfers are preferable.
     
     Args:
     RDF Graph: graph that represents the transport network
@@ -98,12 +98,16 @@ def find_path_distance(g, path):
     Returns:
     Float: distance of the path
     """
+    distance = 0
     origin, origin_route, mid_stop_1, mid_stop_2, destination_route, destination = path
+    # paths without transfers are preferable
+    if origin == mid_stop_1:
+        distance = -0.6
     origin_lat, origin_lon = get_stop_coordinates(g, origin)
     mid_stop_1_lat, mid_stop_1_lon = get_stop_coordinates(g, mid_stop_1)
     mid_stop_2_lat, mid_stop_2_lon = get_stop_coordinates(g, mid_stop_2)
     destination_lat, destination_lon = get_stop_coordinates(g, destination)
-    distance = calculate_distance(origin_lat, origin_lon, mid_stop_1_lat, mid_stop_1_lon)
+    distance += calculate_distance(origin_lat, origin_lon, mid_stop_1_lat, mid_stop_1_lon)
     distance += calculate_distance(mid_stop_1_lat, mid_stop_1_lon, mid_stop_2_lat, mid_stop_2_lon)
     distance += calculate_distance(mid_stop_2_lat, mid_stop_2_lon, destination_lat, destination_lon)
     return distance
@@ -115,7 +119,7 @@ def find_best_routes(g, paths):
     Orders the list of all possible paths returned by the function find_routes according to the distance
     calculated by the function find_path_distance. 
     If the distance of a path is greater than the distance of the shortest path plus 2 kilometer,
-    don't consider the path. If two paths use the same mode for the origin route and the same mode for the destination route,
+    don't consider the path. If two paths use the same mode for the origin and destination routes,
     only the shortest one is considered.
     
     Args:
@@ -125,37 +129,56 @@ def find_best_routes(g, paths):
     Returns:
     Void
     """
-    origin_route_modes = set()
-    destination_route_modes = set()
+    route_modes = set()
     paths = sorted(paths, key=lambda path: find_path_distance(g, path))    
     shortest_path_distance = find_path_distance(g, paths[0])
     origin, origin_route, mid_stop_1, mid_stop_2, destination_route, destination = paths[0]
+    origin = get_label(g, origin)
     origin_route_mode = get_route_mode(g, origin_route)
     origin_route_mode = get_label(g, origin_route_mode)
+    # Differenciate between city and intercity bus
+    if (origin_route.startswith('http://example.com/gtfs#8')):
+        origin_route_mode += ' intercity'
     origin_route = get_label(g, origin_route)
     mid_stop_1 = get_label(g, mid_stop_1)
+    mid_stop_2 = get_label(g, mid_stop_2)
+    destination = get_label(g, destination)
     destination_route_mode = get_route_mode(g, destination_route)
     destination_route_mode = get_label(g, destination_route_mode)
+    # Differenciate between city and intercity bus
+    if (destination_route.startswith('http://example.com/gtfs#8')):
+        destination_route_mode += ' intercity'
     destination_route = get_label(g, destination_route)
-    origin_route_modes.add(origin_route_mode)
-    destination_route_modes.add(destination_route_mode)
-    print("{}#{} ({}) >> {}#{}".format(origin_route_mode, origin_route, mid_stop_1, destination_route_mode, destination_route))
+    route_modes.add('{}#{}'.format(origin_route_mode, destination_route_mode))
+    print('{} >> {}#{} ({} >> {}) >> {}#{} >> {}'.format(origin, origin_route_mode, origin_route, mid_stop_1, mid_stop_2,
+                                                         destination_route_mode, destination_route, destination))
     for path in paths[1:]:
         path_distance = find_path_distance(g, path)
         # don't consider the path if its distance is greater than shortest_path_distance + 2 km
         if (path_distance > shortest_path_distance + 2):
             continue
         origin, origin_route, mid_stop_1, mid_stop_2, destination_route, destination = path
+        origin = get_label(g, origin)
         origin_route_mode = get_route_mode(g, origin_route)
         origin_route_mode = get_label(g, origin_route_mode)
+        # Differenciate between city and intercity bus
+        if (origin_route.startswith('http://example.com/gtfs#8')):
+            origin_route_mode += ' intercity'
         origin_route = get_label(g, origin_route)
         mid_stop_1 = get_label(g, mid_stop_1)
+        mid_stop_2 = get_label(g, mid_stop_2)
+        destination = get_label(g, destination)
         destination_route_mode = get_route_mode(g, destination_route)
         destination_route_mode = get_label(g, destination_route_mode)
+        # Differenciate between city and intercity bus
+        if (destination_route.startswith('http://example.com/gtfs#8')):
+            destination_route_mode += ' intercity'
         destination_route = get_label(g, destination_route)
-        # if origin_route_mode and destination_route_mode have been already seen, we discard this path
-        if (origin_route_mode in origin_route_modes) and (destination_route_mode in destination_route_modes):
+        # if origin_route_mode and destination_route_mode have been already seen together, we discard this path
+        route_mode = '{}#{}'.format(origin_route_mode, destination_route_mode)
+        if (route_mode in route_modes):
             continue
-        origin_route_modes.add(origin_route_mode)
-        destination_route_modes.add(destination_route_mode)
-        print("{}#{} ({}) >> {}#{}".format(origin_route_mode, origin_route, mid_stop_1, destination_route_mode, destination_route))
+        route_modes.add(route_mode)
+        print('{} >> {}#{} ({} >> {}) >> {}#{} >> {}'.format(origin, origin_route_mode, origin_route, mid_stop_1, mid_stop_2,
+                                                         destination_route_mode, destination_route, destination))
+        

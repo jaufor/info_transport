@@ -49,17 +49,18 @@ The project has the following structure:
 - `data/`: This directory contains the datasets used for analysis.
   - `ontology/`: this directory contains two ontologies:
     - `gtfs.ttl`: the designed ontology wthout any instances of Stop, Route and Transfer
-    - `gtfs_with_subway.ttl`: the designed ontology with all the instances of the subway data source 
-  - `raw/`: GTFS Data extracted from the open data sources of the Consorcio Regional de Transportes de Madrid (CRTM) and Renfe, Spain's national state-owned railway company.
+    - `gtfs_with_subway.ttl`: the designed ontology with all the instances of the subway data source
+    - `gtfs_with_all_modes.ttl`: the designed ontology with all the instances of all data sources (subway, light subway, railway, Madrid's city bus and intercity bus). 
+  - `raw/`: GTFS Data extracted from the open data sources of the Consorcio Regional de Transportes de Madrid (CRTM).
      This folder hasn't been upload to repository because the size of some files exceeds the limit of my account in Github.
     - `crtm/`:
       - `M4/`: Subway
-      - `M6/`: City bus
+      - `M5/`: Railway
+      - `M6/`: Madrid's city bus
       - `M10/`: Light subway
       - `M89/`: Intercity bus
-    - `renfe/`:
-      - `M5/`: Railway
   - `processed/`: The data extracted, filtered and processed. 
+- `test/`: this folder contains the file gtfs_shapes.txt with the SHACL rules that the data graph must comply.
 - `requirements.txt`: A text file specifying the Python dependencies required for the project.
 - `README.md`: This file, providing an overview of the repository and instructions for usage.
 - `LICENSE.md`: A markdown file specifying the licence of the code in this repository.

@@ -19,5 +19,5 @@ def find_nearest_stops(lat, lon):
     stops['distance'] = calculate_distance(lat, lon, stops['stop_lat'], stops['stop_lon'])
     # filter stops that are less than 0.5 kilometres and sorter them according to distance
     stops_nearest = stops[stops.distance < 0.5].sort_values(by='distance', ascending=True)
-    stops_nearest = stops_nearest['stop_id'].to_list()
+    stops_nearest = pd.unique(stops_nearest['stop_id']).tolist()
     return stops_nearest
