@@ -63,11 +63,10 @@ The project has the following structure:
 - `test/`: this folder contains the file gtfs_shapes.txt with the SHACL rules that the data graph must comply.
 - `requirements.txt`: A text file specifying the Python dependencies required for the project.
 - `README.md`: This file, providing an overview of the repository and instructions for usage.
-- `LICENSE.md`: A markdown file specifying the licence of the code in this repository.
 
 ## License
 
-The code in this repository is licensed under the [License](LICENSE.md). Feel free to use and modify the code for your own purposes.
+The code in this repository is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 License](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en). Feel free to use and modify the code for your own purposes.
 
 
 
