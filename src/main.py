@@ -4,6 +4,7 @@ from data_reading import add_routes, add_stops, add_transfers
 from find_coordinates import get_coordinates
 from find_stops import find_nearest_stops
 from find_routes import find_routes, find_best_routes
+import time
 
 # create graph
 EX = Namespace('http://example.com/gtfs#')
@@ -49,6 +50,10 @@ else:
     query = street
 # get geographic coordinates of destination address
 lat, lon = get_coordinates(query)
+
+# start clock
+start_time = time.time()
+
 # find stops near destination
 destination_stops = find_nearest_stops(lat, lon)
 
@@ -59,3 +64,6 @@ print (best_paths)
 
 # close the graph
 g.close()
+
+# get time of program execution after getting coordinates from Nominatim
+print("--- %s seconds ---" % (time.time() - start_time))
